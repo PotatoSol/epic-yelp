@@ -4,5 +4,11 @@
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
 </div>
+ <h4>All Restaurants</h4>
+      @foreach (Restaurant restaurant in Model)
+    {
+      <li>@Html.ActionLink(@restaurant.RestaurantName, "Details", "Restaurants", new { id = @restaurant.RestaurantId})</li>
+    }
+  <p>Please @Html.ActionLink("log in", "LogIn", "Account") manage your Restaurants.</p>
