@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace RestaurantApp.Migrations
 {
-    public partial class Inital : Migration
+    public partial class AddSeedData : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -64,39 +64,6 @@ namespace RestaurantApp.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
-                })
-                .Annotation("MySql:CharSet", "utf8mb4");
-
-            migrationBuilder.CreateTable(
-                name: "Items",
-                columns: table => new
-                {
-                    ItemId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    ItemName = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    ItemPrice = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Items", x => x.ItemId);
-                })
-                .Annotation("MySql:CharSet", "utf8mb4");
-
-            migrationBuilder.CreateTable(
-                name: "Restaurants",
-                columns: table => new
-                {
-                    RestaurantId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    RestaurantName = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    RestaurantHours = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4")
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Restaurants", x => x.RestaurantId);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -228,31 +195,56 @@ namespace RestaurantApp.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "RestaurantItems",
+                name: "Items",
                 columns: table => new
                 {
-                    RestaurantItemId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    RestaurantId = table.Column<int>(type: "int", nullable: false),
                     ItemId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    ItemName = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    ItemPrice = table.Column<int>(type: "int", nullable: false),
+                    UserId = table.Column<string>(type: "varchar(255)", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_RestaurantItems", x => x.RestaurantItemId);
+                    table.PrimaryKey("PK_Items", x => x.ItemId);
                     table.ForeignKey(
-                        name: "FK_RestaurantItems_Items_ItemId",
-                        column: x => x.ItemId,
-                        principalTable: "Items",
-                        principalColumn: "ItemId",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_RestaurantItems_Restaurants_RestaurantId",
-                        column: x => x.RestaurantId,
-                        principalTable: "Restaurants",
-                        principalColumn: "RestaurantId",
-                        onDelete: ReferentialAction.Cascade);
+                        name: "FK_Items_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id");
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
+                name: "Restaurants",
+                columns: table => new
+                {
+                    RestaurantId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    RestaurantName = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    RestaurantHours = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    UserId = table.Column<string>(type: "varchar(255)", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4")
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Restaurants", x => x.RestaurantId);
+                    table.ForeignKey(
+                        name: "FK_Restaurants_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id");
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.InsertData(
+                table: "Restaurants",
+                columns: new[] { "RestaurantId", "RestaurantHours", "RestaurantName", "UserId" },
+                values: new object[] { 1, "08:00AM - 05:00PM", "Taco Bell", null });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
@@ -292,14 +284,14 @@ namespace RestaurantApp.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_RestaurantItems_ItemId",
-                table: "RestaurantItems",
-                column: "ItemId");
+                name: "IX_Items_UserId",
+                table: "Items",
+                column: "UserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_RestaurantItems_RestaurantId",
-                table: "RestaurantItems",
-                column: "RestaurantId");
+                name: "IX_Restaurants_UserId",
+                table: "Restaurants",
+                column: "UserId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -320,19 +312,16 @@ namespace RestaurantApp.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "RestaurantItems");
+                name: "Items");
+
+            migrationBuilder.DropTable(
+                name: "Restaurants");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
-
-            migrationBuilder.DropTable(
-                name: "Items");
-
-            migrationBuilder.DropTable(
-                name: "Restaurants");
         }
     }
 }

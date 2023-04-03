@@ -232,6 +232,14 @@ namespace RestaurantApp.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Items");
+
+                    b.HasData(
+                        new
+                        {
+                            ItemId = 1,
+                            ItemName = "Burrito",
+                            ItemPrice = 1
+                        });
                 });
 
             modelBuilder.Entity("RestaurantApp.Models.Restaurant", b =>
@@ -256,27 +264,14 @@ namespace RestaurantApp.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Restaurants");
-                });
 
-            modelBuilder.Entity("RestaurantApp.Models.RestaurantItem", b =>
-                {
-                    b.Property<int>("RestaurantItemId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<int>("ItemId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("RestaurantId")
-                        .HasColumnType("int");
-
-                    b.HasKey("RestaurantItemId");
-
-                    b.HasIndex("ItemId");
-
-                    b.HasIndex("RestaurantId");
-
-                    b.ToTable("RestaurantItems");
+                    b.HasData(
+                        new
+                        {
+                            RestaurantId = 1,
+                            RestaurantHours = "08:00AM - 05:00PM",
+                            RestaurantName = "Taco Bell"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -346,35 +341,6 @@ namespace RestaurantApp.Migrations
                         .HasForeignKey("UserId");
 
                     b.Navigation("User");
-                });
-
-            modelBuilder.Entity("RestaurantApp.Models.RestaurantItem", b =>
-                {
-                    b.HasOne("RestaurantApp.Models.Item", "Item")
-                        .WithMany("JoinEntities")
-                        .HasForeignKey("ItemId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("RestaurantApp.Models.Restaurant", "Restaurant")
-                        .WithMany("JoinEntities")
-                        .HasForeignKey("RestaurantId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Item");
-
-                    b.Navigation("Restaurant");
-                });
-
-            modelBuilder.Entity("RestaurantApp.Models.Item", b =>
-                {
-                    b.Navigation("JoinEntities");
-                });
-
-            modelBuilder.Entity("RestaurantApp.Models.Restaurant", b =>
-                {
-                    b.Navigation("JoinEntities");
                 });
 #pragma warning restore 612, 618
         }

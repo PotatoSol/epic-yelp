@@ -11,8 +11,8 @@ using RestaurantApp.Models;
 namespace RestaurantApp.Migrations
 {
     [DbContext(typeof(RestaurantAppContext))]
-    [Migration("20230403181113_Inital")]
-    partial class Inital
+    [Migration("20230403194944_AddSeedData")]
+    partial class AddSeedData
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -226,7 +226,12 @@ namespace RestaurantApp.Migrations
                     b.Property<int>("ItemPrice")
                         .HasColumnType("int");
 
+                    b.Property<string>("UserId")
+                        .HasColumnType("varchar(255)");
+
                     b.HasKey("ItemId");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Items");
                 });
@@ -245,30 +250,22 @@ namespace RestaurantApp.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
+                    b.Property<string>("UserId")
+                        .HasColumnType("varchar(255)");
+
                     b.HasKey("RestaurantId");
 
+                    b.HasIndex("UserId");
+
                     b.ToTable("Restaurants");
-                });
 
-            modelBuilder.Entity("RestaurantApp.Models.RestaurantItem", b =>
-                {
-                    b.Property<int>("RestaurantItemId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<int>("ItemId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("RestaurantId")
-                        .HasColumnType("int");
-
-                    b.HasKey("RestaurantItemId");
-
-                    b.HasIndex("ItemId");
-
-                    b.HasIndex("RestaurantId");
-
-                    b.ToTable("RestaurantItems");
+                    b.HasData(
+                        new
+                        {
+                            RestaurantId = 1,
+                            RestaurantHours = "08:00AM - 05:00PM",
+                            RestaurantName = "Taco Bell"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -322,33 +319,22 @@ namespace RestaurantApp.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("RestaurantApp.Models.RestaurantItem", b =>
-                {
-                    b.HasOne("RestaurantApp.Models.Item", "Item")
-                        .WithMany("JoinEntities")
-                        .HasForeignKey("ItemId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("RestaurantApp.Models.Restaurant", "Restaurant")
-                        .WithMany("JoinEntities")
-                        .HasForeignKey("RestaurantId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Item");
-
-                    b.Navigation("Restaurant");
-                });
-
             modelBuilder.Entity("RestaurantApp.Models.Item", b =>
                 {
-                    b.Navigation("JoinEntities");
+                    b.HasOne("RestaurantApp.Models.ApplicationUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("RestaurantApp.Models.Restaurant", b =>
                 {
-                    b.Navigation("JoinEntities");
+                    b.HasOne("RestaurantApp.Models.ApplicationUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("User");
                 });
 #pragma warning restore 612, 618
         }

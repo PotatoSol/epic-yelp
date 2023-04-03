@@ -8,8 +8,9 @@ namespace RestaurantApp.Models
     public DbSet<Restaurant> Restaurants { get; set; }
     public DbSet<Item> Items { get; set; }
     public DbSet<RestaurantItem> RestaurantItems { get; set; }
+    #nullable enable
     public RestaurantAppContext(DbContextOptions<RestaurantAppContext> options) : base (options) { }
-
+    #nullable disable
     protected override void OnModelCreating(ModelBuilder builder)
     {
       base.OnModelCreating(builder);
