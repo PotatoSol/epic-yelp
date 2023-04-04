@@ -11,8 +11,8 @@ using RestaurantApp.Models;
 namespace RestaurantApp.Migrations
 {
     [DbContext(typeof(RestaurantAppContext))]
-    [Migration("20230403194944_AddSeedData")]
-    partial class AddSeedData
+    [Migration("20230404045826_Inital")]
+    partial class Inital
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -234,6 +234,14 @@ namespace RestaurantApp.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Items");
+
+                    b.HasData(
+                        new
+                        {
+                            ItemId = 1,
+                            ItemName = "Burrito",
+                            ItemPrice = 1
+                        });
                 });
 
             modelBuilder.Entity("RestaurantApp.Models.Restaurant", b =>

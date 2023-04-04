@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace RestaurantApp.Migrations
 {
-    public partial class AddSeedData : Migration
+    public partial class Inital : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -240,6 +240,11 @@ namespace RestaurantApp.Migrations
                         principalColumn: "Id");
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.InsertData(
+                table: "Items",
+                columns: new[] { "ItemId", "ItemName", "ItemPrice", "UserId" },
+                values: new object[] { 1, "Burrito", 1, null });
 
             migrationBuilder.InsertData(
                 table: "Restaurants",
