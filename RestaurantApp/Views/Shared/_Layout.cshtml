@@ -41,6 +41,12 @@
                 <img src="https://www.clipartmax.com/png/small/29-299281_food-truck-clipart-png.png" height="34"
                     alt="Food Logo" loading="lazy" style="margin-top: -1px;" />
             </a>
+            <form class="d-flex input-group w-auto">
+                <input type="search" class="form-control" placeholder="Burrito's, Alligator legs" aria-label="Search" />
+                <button class="btn btn-outline-primary" type="button" data-mdb-ripple-color="dark">
+                    Search
+                </button>
+            </form>
 
             <!-- Toggle button -->
             <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
@@ -63,11 +69,7 @@
                         <a class="nav-link" href="@Url.Action("Index","Restaurants")">Food Trucks</a>
                     </li>
                 </ul>
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="@Url.Action("Index","Restaurants")">Coffee Shops</a>
-                    </li>
-                </ul>
+
 
                 <!-- Left links -->
 
@@ -79,7 +81,10 @@
                         Sign up for free
                     </button>
 
+
+
                 </div>
+
             </div>
             <!-- Collapsible wrapper -->
         </div>
@@ -99,7 +104,7 @@
     </div>
     <footer class="border-top footer text-muted">
         <div class="container">
-            <i>Food taste better when you eat with friends</i> <a asp-area="" asp-controller="Home"
+            <i>Food taste better eating with friends</i> <a asp-area="" asp-controller="Home"
                 asp-action="Privacy"></a>
         </div>
     </footer>

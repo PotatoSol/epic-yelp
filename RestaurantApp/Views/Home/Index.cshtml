@@ -1,15 +1,20 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+  ViewData["Title"] = "Home Page";
 }
-
 <div class="text-center">
   <br>
-    <h4><i>Students Epic Yelp App</i></h4>
+  <h4><i>Students Epic Yelp App</i></h4>
 
 </div>
- <h4>All Restaurants</h4>
-      @foreach (Restaurant restaurant in Model)
-    {
-      <li>@Html.ActionLink(@restaurant.RestaurantName, "Details", "Restaurants", new { id = @restaurant.RestaurantId})</li>
-    }
+<h4>All Restaurants</h4>
+@foreach (Restaurant restaurant in Model)
+{
+  <li>@Html.ActionLink(@restaurant.RestaurantName, "Details", "Restaurants", new { id = @restaurant.RestaurantId})</li>
+}
+
+<section>
+  <div width="120" height="100" style="vertical-align:middle; text-align:center">
+    <img src="~/css/asset/pickup-truck.jpg" width="400" height="300" />
+  </div>
+</section>
 
