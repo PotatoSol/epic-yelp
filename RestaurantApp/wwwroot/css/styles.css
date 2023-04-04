@@ -4,6 +4,16 @@ body {
   color: #bbb;
 }
 
+.swiper{
+  width: 65%;
+  height: fit-content;
+}
+
+.swiper-slide img{
+  width:465px; 
+  height: 330px;
+}
+
 div#footer {
   position:fixed;
   bottom:0px;
@@ -13,3 +23,6 @@ div#footer {
   background:#333;
   padding:8px;
 }
+
+
+

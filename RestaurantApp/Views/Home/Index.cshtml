@@ -3,18 +3,62 @@
 }
 <div class="text-center">
   <br>
-  <h4><i>Students Epic Yelp App</i></h4>
-
+  <h4><i>Epic Yelp</i></h4>
 </div>
 <h4>All Restaurants</h4>
 @foreach (Restaurant restaurant in Model)
 {
   <li>@Html.ActionLink(@restaurant.RestaurantName, "Details", "Restaurants", new { id = @restaurant.RestaurantId})</li>
 }
+<div class="container">
+  <div class="swiper">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      <div class="swiper-slide" style="vertical-align:middle; text-align:center">
+        <img src="~/css/asset/james.jpg">
+      </div>
+      <div class="swiper-slide" style="vertical-align:middle; text-align:center">
+        <img src="~/css/asset/lisa.jpg">
+      </div>
+      <div class="swiper-slide" style="vertical-align:middle; text-align:center">
+        <img src="~/css/asset/igor.jpg">
+      </div>
+      <div class="swiper-slide" style="vertical-align:middle; text-align:center">
+        <img src="~/css/asset/ctia.jpg">
+      </div>
 
-<section>
-  <div width="120" height="100" style="vertical-align:middle; text-align:center">
-    <img src="~/css/asset/pickup-truck.jpg" width="400" height="300" />
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
+
   </div>
-</section>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script>
+  const swiper = new Swiper('.swiper', {
+
+    loop: true,
+
+    // If we need pagination
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true
+    },
+
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+
+
+  });
+</script>
 
