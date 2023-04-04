@@ -1,0 +1,48 @@
+@{
+  Layout = "_Layout";
+}
+@model IEnumerable<RestaurantApp.Models.Item>
+@using RestaurantApp.Models;
+@{
+
+  ViewData["Title"] = "Index";
+}
+
+<h1>Items for @User.Identity.Name</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                        <a href='/Items?sortOrder=name_desc'>
+                        @Html.DisplayNameFor(model => model.ItemName)</a>
+
+                </th>
+                <th>
+                        <a href='/Items?sortOrder=price_desc'>
+                        @Html.DisplayNameFor(model => model.ItemPrice)</a>
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@if (!Model.Any())
+{
+  <h3>No items have been added yet!</h3>
+} 
+else
+{
+  <ul>
+    @foreach (Item item in Model)
+    {
+      <tr>
+        <td><li>@Html.ActionLink($"{item.ItemName}", "Details", new { id = item.ItemId })</li></td>
+        <td><li>@Html.ActionLink($"{item.ItemPrice}", "Details", new { id = item.ItemId })</li></td>
+      </tr>
+    }
+  </ul>
+}
+    </tbody>
+    </table>
+<p>@Html.ActionLink("Add new item", "Create")</p>
+<p>@Html.ActionLink("Home", "Index", "Home")</p>

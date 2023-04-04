@@ -11,8 +11,8 @@ using RestaurantApp.Models;
 namespace RestaurantApp.Migrations
 {
     [DbContext(typeof(RestaurantAppContext))]
-    [Migration("20230404045826_Inital")]
-    partial class Inital
+    [Migration("20230404174035_ChangeItemPriceToDouble")]
+    partial class ChangeItemPriceToDouble
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -223,8 +223,8 @@ namespace RestaurantApp.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<int>("ItemPrice")
-                        .HasColumnType("int");
+                    b.Property<double>("ItemPrice")
+                        .HasColumnType("double");
 
                     b.Property<string>("UserId")
                         .HasColumnType("varchar(255)");
@@ -234,14 +234,6 @@ namespace RestaurantApp.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Items");
-
-                    b.HasData(
-                        new
-                        {
-                            ItemId = 1,
-                            ItemName = "Burrito",
-                            ItemPrice = 1
-                        });
                 });
 
             modelBuilder.Entity("RestaurantApp.Models.Restaurant", b =>
@@ -266,14 +258,75 @@ namespace RestaurantApp.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Restaurants");
+                });
 
-                    b.HasData(
-                        new
-                        {
-                            RestaurantId = 1,
-                            RestaurantHours = "08:00AM - 05:00PM",
-                            RestaurantName = "Taco Bell"
-                        });
+            modelBuilder.Entity("RestaurantApp.Models.RestaurantItem", b =>
+                {
+                    b.Property<int>("RestaurantItemId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int>("ItemId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("RestaurantId")
+                        .HasColumnType("int");
+
+                    b.HasKey("RestaurantItemId");
+
+                    b.HasIndex("ItemId");
+
+                    b.HasIndex("RestaurantId");
+
+                    b.ToTable("RestaurantItems");
+                });
+
+            modelBuilder.Entity("RestaurantApp.Models.RestaurantReview", b =>
+                {
+                    b.Property<int>("RestaurantReviewId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int>("RestaurantId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ReviewId")
+                        .HasColumnType("int");
+
+                    b.HasKey("RestaurantReviewId");
+
+                    b.HasIndex("RestaurantId");
+
+                    b.HasIndex("ReviewId");
+
+                    b.ToTable("RestaurantReviews");
+                });
+
+            modelBuilder.Entity("RestaurantApp.Models.Review", b =>
+                {
+                    b.Property<int>("ReviewId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("ReviewDate")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("ReviewText")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("ReviewTitle")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("varchar(255)");
+
+                    b.HasKey("ReviewId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Reviews");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -343,6 +396,70 @@ namespace RestaurantApp.Migrations
                         .HasForeignKey("UserId");
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("RestaurantApp.Models.RestaurantItem", b =>
+                {
+                    b.HasOne("RestaurantApp.Models.Item", "Item")
+                        .WithMany("JoinEntities")
+                        .HasForeignKey("ItemId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("RestaurantApp.Models.Restaurant", "Restaurant")
+                        .WithMany("JoinEntities")
+                        .HasForeignKey("RestaurantId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Item");
+
+                    b.Navigation("Restaurant");
+                });
+
+            modelBuilder.Entity("RestaurantApp.Models.RestaurantReview", b =>
+                {
+                    b.HasOne("RestaurantApp.Models.Restaurant", "Restaurant")
+                        .WithMany("ReviewJoin")
+                        .HasForeignKey("RestaurantId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("RestaurantApp.Models.Review", "Review")
+                        .WithMany("ReviewJoin")
+                        .HasForeignKey("ReviewId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Restaurant");
+
+                    b.Navigation("Review");
+                });
+
+            modelBuilder.Entity("RestaurantApp.Models.Review", b =>
+                {
+                    b.HasOne("RestaurantApp.Models.ApplicationUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("RestaurantApp.Models.Item", b =>
+                {
+                    b.Navigation("JoinEntities");
+                });
+
+            modelBuilder.Entity("RestaurantApp.Models.Restaurant", b =>
+                {
+                    b.Navigation("JoinEntities");
+
+                    b.Navigation("ReviewJoin");
+                });
+
+            modelBuilder.Entity("RestaurantApp.Models.Review", b =>
+                {
+                    b.Navigation("ReviewJoin");
                 });
 #pragma warning restore 612, 618
         }

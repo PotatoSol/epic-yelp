@@ -5,11 +5,11 @@
   <br>
   <h4 font-family="Arial"><i>Epic Yelp</i></h4>
 </div>
-<h4>All Restaurants</h4>
+@* <h4>All Restaurants</h4>
 @foreach (Restaurant restaurant in Model)
 {
   <li>@Html.ActionLink(@restaurant.RestaurantName, "Details", "Restaurants", new { id = @restaurant.RestaurantId})</li>
-}
+} *@
 <div class="container">
   <div class="swiper">
     <div class="swiper-wrapper">

@@ -1,0 +1,38 @@
+@{
+  Layout = "_Layout";
+}
+
+@using RestaurantApp.Models
+@model RestaurantApp.Models.Review
+
+<h2>Review Details</h2>
+<hr />
+<h3>@Html.DisplayNameFor(model => model.ReviewTitle): @Html.DisplayFor(model => model.ReviewTitle)</h3>
+<h3>@Html.DisplayNameFor(model => model.ReviewText): @Html.DisplayFor(model => model.ReviewText)</h3>   
+<h3>@Html.DisplayNameFor(model => model.ReviewDate): @Html.DisplayFor(model => model.ReviewDate)</h3>   
+
+
+@if(@Model.ReviewJoin.Count == 0)
+{
+  <p>This review does not have any restaurants yet!</p>
+}
+else
+{
+  <h4>This review has the following restaurants:</h4>
+  <ul>
+    @foreach(RestaurantReview join in Model.ReviewJoin)
+    {
+      <li>Restaurant: @join.Restaurant.RestaurantName</li>
+      @using (Html.BeginForm("DeleteJoin", "Reviews"))
+      {
+        @Html.Hidden("joinId", @join.RestaurantReviewId)
+        <input type="submit" value="Delete"/>
+      }
+    }
+  </ul>
+}
+
+<p>@Html.ActionLink("Add a Restaurant", "AddRestaurant", new { id = Model.ReviewId })</p>
+<p>@Html.ActionLink("Edit Review", "Edit", new { id = Model.ReviewId })</p>
+<p>@Html.ActionLink("Delete Review", "Delete", new { id = Model.ReviewId })</p>
+<p>@Html.ActionLink("Back to list", "Index")</p>

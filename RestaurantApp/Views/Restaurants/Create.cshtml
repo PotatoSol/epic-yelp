@@ -1,0 +1,18 @@
+@{
+  Layout = "_Layout";
+}
+
+@model RestaurantApp.Models.Restaurant
+
+<h4>Add a new restaurant</h4>
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.RestaurantName)
+    @Html.TextBoxFor(model => model.RestaurantName)
+    @Html.LabelFor(model => model.RestaurantHours)
+    @Html.TextBoxFor(model => model.RestaurantHours)
+
+    <input type="submit" value="Add new restaurant" class="btn btn-default" />
+}
+<p>@Html.ActionLink("Show all restaurants", "Index")</p>

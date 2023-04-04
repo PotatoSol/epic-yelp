@@ -8,10 +8,8 @@ public class Item
   [Required]
   public string ItemName { get; set; }
   [Required]
-  public int ItemPrice { get; set; }
-  #nullable enable
+  public double ItemPrice { get; set; }
   public List<RestaurantItem> JoinEntities { get; }
-  #nullable disable
   public ApplicationUser User { get; set; }
 
 

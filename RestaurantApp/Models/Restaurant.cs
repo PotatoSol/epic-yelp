@@ -4,13 +4,12 @@ namespace RestaurantApp.Models;
 public class Restaurant
 {
     public int RestaurantId  { get; set; }
-    [Required]
+    [Required(ErrorMessage = "The Restaurant's description can't be empty!")]
     public string RestaurantName {get; set;}
     [Required]
     public string RestaurantHours {get;set;}
-    #nullable enable
     public List<RestaurantItem> JoinEntities { get;}
-    #nullable disable
+    public List<RestaurantReview> ReviewJoin { get;}
     public ApplicationUser User {get;set;}
 
 }
