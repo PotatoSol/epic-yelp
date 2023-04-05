@@ -14,6 +14,7 @@
   <thead class="bg-light">
     <tr>
       <th>Name of Restaurant</th>
+      <th>Rating</th>
       <th>Hours</th>
       <th>Actions</th> 
     </tr>
@@ -33,6 +34,15 @@
           </div>
         </td>
         
+        <td>
+          <div class="d-flex align-items-center">
+            <div class="ms-3">
+              @restaurant.RestaurantRating
+            </div>
+          </div>
+        </td>
+
+
         <td>
           <p class="fw-normal mb-1">@restaurant.RestaurantHours</p>
         </td>

@@ -76,9 +76,25 @@ namespace RestaurantApp.Controllers
     #nullable disable
       if (joinEntity == null && restaurantId != 0)
       {
-        _db.RestaurantReviews.Add(new RestaurantReview() { RestaurantId = restaurantId, ReviewId = review.ReviewId });
+        _db.RestaurantReviews.Add(new RestaurantReview() { RestaurantId = restaurantId, ReviewId = review.ReviewId});
         _db.SaveChanges();
       }
+      double averageRating = 0;
+      double count = 0;
+      List<RestaurantReview> ourReviews = _db.RestaurantReviews .ToList();
+      foreach(RestaurantReview aReview in ourReviews){
+        if(aReview.RestaurantId == restaurantId){
+          averageRating += _db.Reviews.FirstOrDefault(curr => (curr.ReviewId == aReview.ReviewId)).ReviewRating;
+          count++;
+        }
+      }
+      averageRating = averageRating / count; 
+      Restaurant currentRestaurantRating = _db.Restaurants.FirstOrDefault(rest => rest.RestaurantId == restaurantId);
+      currentRestaurantRating.RestaurantRating = averageRating;
+      _db.Restaurants.Update(currentRestaurantRating);
+      _db.SaveChanges();
+      //_db.Reviews.Update(review);
+      //_db.SaveChanges();
         return RedirectToAction("Details","Restaurants", new { id = restaurantId });
       }
     }

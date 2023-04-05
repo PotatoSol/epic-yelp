@@ -15,5 +15,7 @@ namespace RestaurantApp.Models
     public List<RestaurantReview> ReviewJoin { get;}
     public ApplicationUser User { get; set; }
 
+    public double ReviewRating { get; set; }
+
   }
 }

@@ -956,23 +956,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/viradethxay-ananh/.nuget/packages/": {},
-    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
+    "C:\\Users\\solmi\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/viradethxay-ananh/Desktop/RestaurantApp.Solution /RestaurantApp/RestaurantApp.csproj",
+      "projectUniqueName": "C:\\Users\\solmi\\desktop\\epic-yelp\\RestaurantApp\\RestaurantApp.csproj",
       "projectName": "RestaurantApp",
-      "projectPath": "/Users/viradethxay-ananh/Desktop/RestaurantApp.Solution /RestaurantApp/RestaurantApp.csproj",
-      "packagesPath": "/Users/viradethxay-ananh/.nuget/packages/",
-      "outputPath": "/Users/viradethxay-ananh/Desktop/RestaurantApp.Solution /RestaurantApp/obj/",
+      "projectPath": "C:\\Users\\solmi\\desktop\\epic-yelp\\RestaurantApp\\RestaurantApp.csproj",
+      "packagesPath": "C:\\Users\\solmi\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\solmi\\desktop\\epic-yelp\\RestaurantApp\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "/Users/viradethxay-ananh/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\solmi\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -1034,7 +1030,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.202/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

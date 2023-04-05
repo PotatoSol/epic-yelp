@@ -12,4 +12,6 @@ public class Restaurant
     public List<RestaurantReview> ReviewJoin { get;}
     public ApplicationUser User {get;set;}
 
+    public double RestaurantRating { get; set;} = 0;
+
 }

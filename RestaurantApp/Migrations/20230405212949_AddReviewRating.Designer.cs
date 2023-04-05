@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RestaurantApp.Models;
 
@@ -10,9 +11,10 @@ using RestaurantApp.Models;
 namespace RestaurantApp.Migrations
 {
     [DbContext(typeof(RestaurantAppContext))]
-    partial class RestaurantAppContextModelSnapshot : ModelSnapshot
+    [Migration("20230405212949_AddReviewRating")]
+    partial class AddReviewRating
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -247,9 +249,6 @@ namespace RestaurantApp.Migrations
                     b.Property<string>("RestaurantName")
                         .IsRequired()
                         .HasColumnType("longtext");
-
-                    b.Property<double>("RestaurantRating")
-                        .HasColumnType("double");
 
                     b.Property<string>("UserId")
                         .HasColumnType("varchar(255)");

@@ -22,7 +22,7 @@ else
   <ul>
     @foreach(RestaurantReview join in Model.ReviewJoin)
     {
-      <li>Restaurant: @join.Restaurant.RestaurantName</li>
+      <li>Restaurant: @join.Restaurant.RestaurantName <br>   Rating: @join.Review.ReviewRating</li>
       @using (Html.BeginForm("DeleteJoin", "Reviews"))
       {
         @Html.Hidden("joinId", @join.RestaurantReviewId)
