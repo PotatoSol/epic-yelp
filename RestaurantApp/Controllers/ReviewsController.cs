@@ -79,7 +79,7 @@ namespace RestaurantApp.Controllers
         _db.RestaurantReviews.Add(new RestaurantReview() { RestaurantId = restaurantId, ReviewId = review.ReviewId });
         _db.SaveChanges();
       }
-        return RedirectToAction("Details", new { id = restaurantId });
+        return RedirectToAction("Details","Restaurants", new { id = restaurantId });
       }
     }
 
@@ -145,12 +145,12 @@ namespace RestaurantApp.Controllers
     [HttpPost]
 
     [HttpPost]
-    public ActionResult DeleteJoin(int joinId)
+    public ActionResult DeleteJoin(int joinId, int restaurantId )
     {
       RestaurantReview joinEntry = _db.RestaurantReviews.FirstOrDefault(entry => entry.RestaurantReviewId == joinId);
       _db.RestaurantReviews.Remove(joinEntry);
       _db.SaveChanges();
-      return RedirectToAction("Index");
+      return RedirectToAction("Details","Restaurants", new { id = restaurantId } );
     }
   }
 }
