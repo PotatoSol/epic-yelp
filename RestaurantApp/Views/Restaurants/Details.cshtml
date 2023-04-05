@@ -5,134 +5,132 @@
 @model RestaurantApp.Models.Restaurant
 
 
-<h4>Restaurant Details</h4>
-<hr />
+
+@*
 <h3>@Html.DisplayNameFor(model => model.RestaurantName): @Html.DisplayFor(model => model.RestaurantName)</h3>
 
 @if(@Model.JoinEntities.Count == 0){
-  
-  <p>This restaurant does not have any items</p>
+
+<p>This restaurant does not have any items</p>
 }
 else
 {
-  <h4>Items this Restaurant has:</h4>
-  <ul>
-  
-  @foreach(RestaurantItem join in Model.JoinEntities)
-  {
-    <li>@join.Item.ItemName</li>
-    
-    @using (Html.BeginForm("DeleteJoin", "Restaurants"))
-    {
-      
-      @Html.Hidden("joinId", @join.RestaurantItemId)
-      
-      <input type="submit" value="Delete"/>
-    
-    }
-  }
-  </ul>
+<h4>Items this Restaurant has:</h4>
+<ul>
+
+@foreach(RestaurantItem join in Model.JoinEntities)
+{
+<li>@join.Item.ItemName</li>
+
+@using (Html.BeginForm("DeleteJoin", "Restaurants"))
+{
+
+@Html.Hidden("joinId", @join.RestaurantItemId)
+
+<input type="submit" value="Delete"/>
+
+}
+}
+</ul>
 }
 
 
 @if(@Model.ReviewJoin.Count == 0)
 {
-  <p>This restaurant does not have any reviews</p>
+<p>This restaurant does not have any reviews</p>
 }
 else
 {
-  <h4>Reviews for this Restaurant:</h4>
-  <ul>
-  @foreach(RestaurantReview join in Model.ReviewJoin)
-  {
-    <li>@join.Review.ReviewTitle</li>
-    @using (Html.BeginForm("DeleteJoin", "Reviews"))
-    {
+<h4>Reviews for this Restaurant:</h4>
+<ul>
+@foreach(RestaurantReview join in Model.ReviewJoin)
+{
+<li>@join.Review.ReviewTitle</li>
+@using (Html.BeginForm("DeleteJoin", "Reviews"))
+{
 
-      @Html.Hidden("joinId", @join.RestaurantReviewId)
-       @Html.Hidden("restaurantId", Model.RestaurantId)
-      <input type="submit" value="Delete"/>
-    }
-  }
-  </ul>
+@Html.Hidden("joinId", @join.RestaurantReviewId)
+@Html.Hidden("restaurantId", Model.RestaurantId)
+<input type="submit" value="Delete"/>
 }
+}
+</ul>
+} *@
 
+@if (@Model.JoinEntities.Count == 0)
+{
 
-@* <table class="table align-middle mb-0 bg-white">
-  
-  <thead class="bg-light">
+  <p>@Html.DisplayFor(model => model.RestaurantName) does not have any items!</p>
+}
+else
+{
+  <table class="table caption-top">
+      <caption>
+    Reviews for: @Html.DisplayFor(model => model.RestaurantName)
+  </caption>
+  <thead>
     <tr>
-      <th>Name of Restaurant</th>
-      <th>Items for this restaurant</th>
-      <th>Reviews for this restaurant</th> 
+      <th scope="col">Restaurant </th>
+      <th scope="col">Items</th>
+      <th scope="col">Action</th>
+
     </tr>
   </thead>
 
   <tbody>
-    @foreach (Restaurant restaurant in Model)
-    {
-      <tr> @* begining of the first row *@
-        
-        @* <td>          
-          <div class="d-flex align-items-center">
-            <div class="ms-3">
-              @restaurant.RestaurantName
-            </div>
-          </div>
-        </td>
-       
-       @if(@Model.JoinEntities.Count == 0){
-        @:<td>
-          <p class="fw-normal mb-1">This restaurant does not have any items</p>
-        @:</td>
-       }
-       
-       else{
-        @:<td>          
-          <p class="fw-normal mb-1">Items this restaurant has:</p>
-            @foreach(RestaurantItem join in Model.JoinEntities){
-               <p class="text-muted mb-0">@join.Item.ItemName</p>
-    
-                @using (Html.BeginForm("DeleteJoin", "Restaurants")){
-      
-                @Html.Hidden("joinId", @join.RestaurantItemId)
-      
-                <input type="submit" value="Delete"/>   
-              }
-            }  
-        @:</td>    
-       }
-        
-       
-       
-       @if(@Model.ReviewJoin.Count == 0){
-        @:<td>
-          <p class="fw-normal mb-1">This restaurant does not have any reviews</p>
-        @:</td>
-       }
-       
-       else{
-        @:<td>          
-          <p class="fw-normal mb-1">Reviews this restaurant has:</p>
-             @foreach(RestaurantReview join in Model.ReviewJoin) {
-               <p class="text-muted mb-0">@join.Review.ReviewTitle</p>
-    
-                @using (Html.BeginForm("DeleteJoin", "Reviews"))
-                {
-                  @Html.Hidden("joinId", @join.RestaurantReviewId)
-                  <input type="submit" value="Delete"/>
-                }
-            }  
-        @:</td>    
-       } 
-      
-      
-      
-      
-      </tr>
-    }
-  </tbody>
-</table>  *@
+    @foreach (RestaurantItem join in Model.JoinEntities)
+      {
+        <tr>
+          <th scope="row">@join.Restaurant.RestaurantName</th>
+          <td>@join.Item.ItemName</td>
+          <td>@using (Html.BeginForm("DeleteJoin", "Restaurants"))
+          {
+            @Html.Hidden("joinId", @join.RestaurantItemId)
+            <input type="submit" class="btn btn-primary flex-grow-1" value="Delete"/>
+     
+          }
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+}
+@if(@Model.ReviewJoin.Count == 0)
+{
+    <p>Restaurant does not have any reviews!</p>
+}
+else
+{
+  <table class="table caption-top">
+  <thead>
+    <tr>
+      <th scope="col">Title</th>
+      <th scope="col">Review</th>
+      <th scope="col">Action</th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+  @foreach(RestaurantReview join in Model.ReviewJoin)
+      {
+        <tr>
+          <th scope="row">@join.Review.ReviewTitle</th>
+          <td>@join.Review.ReviewText</td>
+          <td>
+          @using (Html.BeginForm("DeleteJoin", "Reviews"))
+          {
+
+          @Html.Hidden("joinId", @join.RestaurantReviewId)
+          @Html.Hidden("restaurantId", Model.RestaurantId)
+           <input type="submit" class="btn btn-primary flex-grow-1" value="Delete"/>
+} 
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+}
 
 
 
@@ -147,8 +145,19 @@ else
 
 
 
-<p>@Html.ActionLink("Add a Review", "Create", "Reviews", new { id = Model.RestaurantId })</p>
+
+
+
+
+
+
+
+
+
+
+
+@* <p>@Html.ActionLink("Add a Review", "Create", "Reviews", new { id = Model.RestaurantId })</p>
 <p>@Html.ActionLink("Add a Item", "AddItem", new { id = Model.RestaurantId })</p>
 <p>@Html.ActionLink("Edit Restaurant", "Edit", new { id = Model.RestaurantId })</p>
 <p>@Html.ActionLink("Delete Restaurant", "Delete", new { id = Model.RestaurantId })</p>
-<p>@Html.ActionLink("Back to list", "Index")</p>
+<p>@Html.ActionLink("Back to list", "Index")</p> *@

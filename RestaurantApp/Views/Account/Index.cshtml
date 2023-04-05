@@ -2,11 +2,56 @@
   Layout = "_Layout";
 }
 
-<h4>Profile</h4>
 <hr />
 
 @if (User.Identity.IsAuthenticated)
 {
-  <p>Hello @User.Identity.Name!</p>
+  <h5>My Profile</h5>
+
+<section style="background-color: #9de2ff;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-8">
+        <div class="card" style="border-radius: 15px;">
+          <div class="card-body p-4">
+            <div class="d-flex text-black">
+              <div class="flex-shrink-0">
+                <img src="https://mdbcdn.b-cdn.net/img/new/avatars/8.webp"
+                  alt="Generic placeholder image" class="img-fluid"
+                  style="width: 180px; border-radius: 10px;" />
+              </div>
+              <div class="flex-grow-1 ms-3">
+                <h5 class="mb-1"> @User.Identity.Name </h5>
+
+                <div class="d-flex justify-content-start rounded-3 p-2 mb-2"
+                  style="background-color: #efefef;">
+                  <div>
+                    <p class="small text-muted mb-1">
+                      Reviews
+                    </p>
+                    <p class="mb-0">41</p>
+                  </div>
+                  <div class="px-3">
+                    <p class="small text-muted mb-1">
+                      Followers
+                    </p>
+                    <p class="mb-0">976</p>
+                  </div>
+                  <div>
+                    <p class="small text-muted mb-1">
+                      Rating
+                    </p>
+                    <p class="mb-0">8.5</p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 }
 
