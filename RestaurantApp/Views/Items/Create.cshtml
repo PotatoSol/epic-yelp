@@ -11,9 +11,9 @@
 
 @using (Html.BeginForm())
 {
-  @Html.LabelFor(model => model.ItemName)
+  @Html.LabelFor(model => model.ItemName, "Item Name")
   @Html.TextBoxFor(model => model.ItemName)
-  @Html.LabelFor(model => model.ItemPrice)
+  @Html.LabelFor(model => model.ItemPrice, "Item Price")
   @Html.TextBoxFor(model => model.ItemPrice)
 
   <input type="submit" value="Add new item" class="btn btn-default" />

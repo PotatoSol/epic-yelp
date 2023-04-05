@@ -13,7 +13,7 @@
     <tr>
       <th>Name of Restaurant</th>
       <th>Hours</th>
-      <th>Actions</th>
+      @* <th>Actions</th> *@
     </tr>
   </thead>
 
@@ -24,18 +24,19 @@
         <td>
           <div class="d-flex align-items-center">
             <div class="ms-3">
-              @restaurant.RestaurantName
+              @* @restaurant.RestaurantName *@
+              @Html.ActionLink($"{@restaurant.RestaurantName}", "Details", new { id = restaurant.RestaurantId })
             </div>
           </div>
         </td>
         <td>
           <p class="fw-normal mb-1">@restaurant.RestaurantHours</p>
         </td>
-        <td>
+        @* <td>
           <button type="button" class="btn btn-link btn-sm btn-rounded">
             @Html.ActionLink("Edit", "Details", new { id = restaurant.RestaurantId })
           </button>
-        </td>
+        </td> *@
       </tr>
     }
   </tbody>
