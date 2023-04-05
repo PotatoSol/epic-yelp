@@ -4,21 +4,31 @@
 
 @model RestaurantApp.Models.Restaurant
 
-<h2>Edit</h2>
+<h4>Edit: @Html.DisplayFor(model => model.RestaurantName)</h4>
 
-<h4>Edit this restaurant: @Html.DisplayFor(model => model.RestaurantName)</h4>
-
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
 @using (Html.BeginForm())
 {
     @Html.HiddenFor(model => model.RestaurantId)
 
-    @Html.LabelFor(model => model.RestaurantName)
-    @Html.EditorFor(model => model.RestaurantName)
+    @Html.LabelFor(model => model.RestaurantName, "Name:")
 
-    @Html.LabelFor(model => model.RestaurantHours)
-    @Html.EditorFor(model => model.RestaurantHours)
-
-    <input type="submit" value="Save" />
+    @Html.EditorFor(model => model.RestaurantName, new { @class="form-control col-sm-3", id="control-id1"})
+    
+    <br>
+    @Html.LabelFor(model => model.RestaurantHours, "Hours:")
+    
+    @Html.EditorFor(model => model.RestaurantHours, new { @class="form-control col-sm-3", id="control-id1"})
+    <br>
+    <input type="submit" value="Save"/>
+    
 }
-
-<p>@Html.ActionLink("Back to list", "Index")</p>
+    </div>
+  </div>
+</div>
+<br>
+<button type="button" class="btn btn-dark">
+<a class="text-white" href="@Url.Action("Index","Restaurants", 
+new { id = Model.RestaurantId })">Back to list</a></button>
