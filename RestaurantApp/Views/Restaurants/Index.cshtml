@@ -40,5 +40,9 @@
     }
   </tbody>
 </table>
-<p>@Html.ActionLink("Add New Restaurant", "Create")</p>
+@* <p>@Html.ActionLink("Add New Restaurant", "Create")</p> *@
+
+<button type="button" class="btn btn-primary me-3">
+  <a class="text-white" href="@Url.Action("Create","Restaurants")">Add New Restaurant</a>
+</button>
 

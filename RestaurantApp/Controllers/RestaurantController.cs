@@ -33,6 +33,7 @@ namespace RestaurantApp.Controllers
       return View(thisRestaurant);
     }
 
+    [HttpGet]
     public ActionResult Create()
     {
       return View();
@@ -56,9 +57,9 @@ namespace RestaurantApp.Controllers
     [HttpPost]
     public ActionResult AddItem(Restaurant restaurant, int itemId)
     {
-      #nullable enable
+#nullable enable
       RestaurantItem? joinEntity = _db.RestaurantItems.FirstOrDefault(join => (join.ItemId == itemId && join.RestaurantId == restaurant.RestaurantId));
-      #nullable disable
+#nullable disable
       if (joinEntity == null && itemId != 0)
       {
         _db.RestaurantItems.Add(new RestaurantItem() { ItemId = itemId, RestaurantId = restaurant.RestaurantId });
@@ -76,9 +77,9 @@ namespace RestaurantApp.Controllers
     [HttpPost]
     public ActionResult AddReview(Restaurant restaurant, int reviewId)
     {
-      #nullable enable
+#nullable enable
       RestaurantReview? joinEntity = _db.RestaurantReviews.FirstOrDefault(join => (join.ReviewId == reviewId && join.RestaurantId == restaurant.RestaurantId));
-      #nullable disable
+#nullable disable
       if (joinEntity == null && reviewId != 0)
       {
         _db.RestaurantReviews.Add(new RestaurantReview() { ReviewId = reviewId, RestaurantId = restaurant.RestaurantId });

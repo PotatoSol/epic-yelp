@@ -1,20 +1,39 @@
 @{
   Layout = "_Layout";
 }
-
 @model RestaurantApp.Models.Review
 
-<h4>Add a new review</h4>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      @using (Html.BeginForm(new { @class = "form-horizontal" }))
+      {
+        <div class="form-group">
+          @Html.Label("Select a restaurant:")
+          @Html.DropDownList("RestaurantId")
+        </div>
+        <div class="form-group">
+          @Html.LabelFor(model => model.ReviewTitle,"Review Title")
+          @Html.TextBoxFor(model => model.ReviewTitle, new { @class="form-control col-sm-3", id="control-id2"})
+        </div>
+        <div class="form-group">
+          @Html.LabelFor(model => model.ReviewText, "Write Review")
+          @Html.TextBoxFor(model => model.ReviewText, new { @class="form-control col-sm-3", id="control-id4"})
+        </div>
 
-@using (Html.BeginForm())
-{
-    @Html.Label("Select restaurant")
-    @Html.DropDownList("RestaurantId")
-    @Html.LabelFor(model => model.ReviewTitle)
-    @Html.TextBoxFor(model => model.ReviewTitle)
-    @Html.LabelFor(model => model.ReviewText)
-    @Html.TextBoxFor(model => model.ReviewText)
+        <input type="submit" class="btn btn-primary " value="Add Review" />
+      }
+    </div>
+  </div>
+</div>
 
-    <input type="submit" value="Add new review" class="btn btn-default" />
-}
-<p>@Html.ActionLink("Show all reviews", "Index")</p>
+
+
+
+
+
+
+
+
+
+
