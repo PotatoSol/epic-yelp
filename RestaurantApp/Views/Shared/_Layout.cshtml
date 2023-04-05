@@ -5,7 +5,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Students Restaurant App</title>
-
     <link rel="stylesheet" type="text/css" href="~/css/styles.css" />
     <link rel="stylesheet" type="text/css" href="~/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
@@ -18,9 +17,10 @@
         <!-- Container wrapper -->
         <div class="container">
             <!-- Navbar brand -->
-            <a class="navbar-brand me-2" >
-                <img src="https://www.clipartmax.com/png/small/121-1213621_catfish-restaurant-logo.png"
-                    height="40" alt="Food Logo" loading="lazy" style="margin-top: -1px;" />
+            <a class="navbar-brand me-2">
+                <a class="nav-link" href="@Url.Action("Index","Home")">
+                    <img src="https://www.clipartmax.com/png/small/121-1213621_catfish-restaurant-logo.png" height="40"
+                    alt="Food Logo" loading="lazy" style="margin-top: -1px;" /></a>
             </a>
             <form class="d-flex input-group w-auto">
                 <input type="search" class="form-control" placeholder="Burrito's, Alligator legs" aria-label="Search" />
@@ -51,21 +51,41 @@
                     </li>
                 </ul>
 
-
-                <!-- Left links -->
-
+                <!-- IsAuthenticated -->
+                @if (User?.Identity?.IsAuthenticated ?? false)
+                {
+                    <ul class="navbar-nav">
+                        <!-- Avatar -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle d-flex align-items-center" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle"
+                                    height="22" alt="Portrait of a Woman" loading="lazy" />
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#">My profile</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Settings</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="@Url.Action("LogOff","Account")">Logout</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                }
+                else{
                 <div class="d-flex align-items-center">
                     <button type="button" class="btn btn-link px-3 me-2">
                         <a href="@Url.Action("LogIn","Account")"> Login </a>
                     </button>
-                    <button type="button" class="btn btn-primary me-3">
-                        Sign up for free
+                    <button type="button" class="btn btn-primary me-3 text-white">
+                        <a class="text-white" href="@Url.Action("Register","Account")">Sign up for free</a>
                     </button>
-
-
-
                 </div>
-
+                }
             </div>
             <!-- Collapsible wrapper -->
         </div>
@@ -87,5 +107,4 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
-
 </html>

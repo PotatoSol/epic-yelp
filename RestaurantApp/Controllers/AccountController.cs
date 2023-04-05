@@ -85,7 +85,8 @@ namespace RestaurantApp.Controllers
         }
       }
     }
-    [HttpPost]
+    
+    [HttpGet]
     public async Task<ActionResult> LogOff()
     {
       await _signInManager.SignOutAsync();
