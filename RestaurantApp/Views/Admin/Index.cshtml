@@ -1,30 +1,10 @@
-@*@{
-  Layout = "_Layout";
-}
-
- <h2>Account Management</h2>
-<hr />
-@if (User.Identity.IsAuthenticated)
-{
-<p>Hello @User.Identity.Name!</p>
-@using (Html.BeginForm("LogOff", "Account"))
-{
-<input type="submit" class="btn btn-default" value="Log out" />
-}
-}
-else
-{
-<p>@Html.ActionLink("Register", "Register")</p>
-<p>@Html.ActionLink("Log in", "Login")</p>
-}
-<p>@Html.ActionLink("Home", "Index", "Home")</p> *@
 @model IEnumerable<ApplicationUser>
 @{
   ViewData["Title"] = "READ USER";
 }
 
 <h1 class="bg-info text-white">All Users</h1>
-<a asp-action="Register" class="btn btn-secondary">Create a User</a>
+<a asp-action="Create" class="btn btn-secondary">Create a User</a>
 
 <table class="table table-sm table-bordered">
   <tr>
@@ -52,7 +32,6 @@ else
           </button>
         </form>
       </td>
-
     </tr>
   }
 </table>

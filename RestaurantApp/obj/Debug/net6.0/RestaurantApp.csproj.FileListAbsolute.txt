@@ -38,3 +38,38 @@
 /Users/viradethxay-ananh/Desktop/RestaurantApp.Solution /RestaurantApp/obj/Debug/net6.0/ref/RestaurantApp.dll
 /Users/viradethxay-ananh/Desktop/RestaurantApp.Solution /RestaurantApp/bin/Debug/net6.0/Humanizer.dll
 /Users/viradethxay-ananh/Desktop/RestaurantApp.Solution /RestaurantApp/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Design.dll
+/Users/Chill/Desktop/epic-yelp/RestaurantApp/bin/Debug/net6.0/appsettings.Development.json
+/Users/Chill/Desktop/epic-yelp/RestaurantApp/bin/Debug/net6.0/appsettings.json
+/Users/Chill/Desktop/epic-yelp/RestaurantApp/bin/Debug/net6.0/RestaurantApp.staticwebassets.runtime.json
+/Users/Chill/Desktop/epic-yelp/RestaurantApp/bin/Debug/net6.0/RestaurantApp
+/Users/Chill/Desktop/epic-yelp/RestaurantApp/bin/Debug/net6.0/RestaurantApp.deps.json
+/Users/Chill/Desktop/epic-yelp/RestaurantApp/bin/Debug/net6.0/RestaurantApp.runtimeconfig.json
+/Users/Chill/Desktop/epic-yelp/RestaurantApp/bin/Debug/net6.0/RestaurantApp.dll
+/Users/Chill/Desktop/epic-yelp/RestaurantApp/bin/Debug/net6.0/RestaurantApp.pdb
+/Users/Chill/Desktop/epic-yelp/RestaurantApp/bin/Debug/net6.0/Humanizer.dll
+/Users/Chill/Desktop/epic-yelp/RestaurantApp/bin/Debug/net6.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+/Users/Chill/Desktop/epic-yelp/RestaurantApp/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.dll
+/Users/Chill/Desktop/epic-yelp/RestaurantApp/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll
+/Users/Chill/Desktop/epic-yelp/RestaurantApp/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Design.dll
+/Users/Chill/Desktop/epic-yelp/RestaurantApp/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Relational.dll
+/Users/Chill/Desktop/epic-yelp/RestaurantApp/bin/Debug/net6.0/MySqlConnector.dll
+/Users/Chill/Desktop/epic-yelp/RestaurantApp/bin/Debug/net6.0/Pomelo.EntityFrameworkCore.MySql.dll
+/Users/Chill/Desktop/epic-yelp/RestaurantApp/obj/Debug/net6.0/RestaurantApp.csproj.AssemblyReference.cache
+/Users/Chill/Desktop/epic-yelp/RestaurantApp/obj/Debug/net6.0/RestaurantApp.GeneratedMSBuildEditorConfig.editorconfig
+/Users/Chill/Desktop/epic-yelp/RestaurantApp/obj/Debug/net6.0/RestaurantApp.AssemblyInfoInputs.cache
+/Users/Chill/Desktop/epic-yelp/RestaurantApp/obj/Debug/net6.0/RestaurantApp.AssemblyInfo.cs
+/Users/Chill/Desktop/epic-yelp/RestaurantApp/obj/Debug/net6.0/RestaurantApp.csproj.CoreCompileInputs.cache
+/Users/Chill/Desktop/epic-yelp/RestaurantApp/obj/Debug/net6.0/RestaurantApp.MvcApplicationPartsAssemblyInfo.cache
+/Users/Chill/Desktop/epic-yelp/RestaurantApp/obj/Debug/net6.0/RestaurantApp.RazorAssemblyInfo.cache
+/Users/Chill/Desktop/epic-yelp/RestaurantApp/obj/Debug/net6.0/RestaurantApp.RazorAssemblyInfo.cs
+/Users/Chill/Desktop/epic-yelp/RestaurantApp/obj/Debug/net6.0/staticwebassets.build.json
+/Users/Chill/Desktop/epic-yelp/RestaurantApp/obj/Debug/net6.0/staticwebassets.development.json
+/Users/Chill/Desktop/epic-yelp/RestaurantApp/obj/Debug/net6.0/scopedcss/Views/Shared/_Layout.cshtml.rz.scp.css
+/Users/Chill/Desktop/epic-yelp/RestaurantApp/obj/Debug/net6.0/scopedcss/bundle/RestaurantApp.styles.css
+/Users/Chill/Desktop/epic-yelp/RestaurantApp/obj/Debug/net6.0/scopedcss/projectbundle/RestaurantApp.bundle.scp.css
+/Users/Chill/Desktop/epic-yelp/RestaurantApp/obj/Debug/net6.0/RestaurantApp.csproj.CopyComplete
+/Users/Chill/Desktop/epic-yelp/RestaurantApp/obj/Debug/net6.0/RestaurantApp.dll
+/Users/Chill/Desktop/epic-yelp/RestaurantApp/obj/Debug/net6.0/refint/RestaurantApp.dll
+/Users/Chill/Desktop/epic-yelp/RestaurantApp/obj/Debug/net6.0/RestaurantApp.pdb
+/Users/Chill/Desktop/epic-yelp/RestaurantApp/obj/Debug/net6.0/RestaurantApp.genruntimeconfig.cache
+/Users/Chill/Desktop/epic-yelp/RestaurantApp/obj/Debug/net6.0/ref/RestaurantApp.dll

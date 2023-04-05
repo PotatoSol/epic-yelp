@@ -11,7 +11,7 @@ using System.Security.Claims;
 
 namespace RestaurantApp.Controllers
 {
-  [Authorize]
+  // [Authorize]
   public class ItemsController : Controller
   {
     private readonly RestaurantAppContext _db;
@@ -23,29 +23,28 @@ namespace RestaurantApp.Controllers
       _db = db;
     }
 
-    public async Task<IActionResult> Index(string sortOrder)
+    public ActionResult Index(string sortOrder)
     {
-      string userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-      ApplicationUser currentUser = await _userManager.FindByIdAsync(userId);
-      List<Item> userItems = _db.Items
-                          .Where(entry => entry.User.Id == currentUser.Id)
+      // string userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+      // ApplicationUser currentUser = await _userManager.FindByIdAsync(userId);
+      List<Item> allItems = _db.Items
                           .Include(item => item.JoinEntities)
                           .ToList();
       // return View(userItems);
 
-      var items = from r in userItems
+      var items = from r in allItems
                    select r;
 
       switch (sortOrder)
       {
         case "name_desc":
-          items = userItems.OrderBy(r => r.ItemName);
+          items = allItems.OrderBy(r => r.ItemName);
           break;
         case "price_desc":
-          items = userItems.OrderByDescending(r => r.ItemPrice);
+          items = allItems.OrderByDescending(r => r.ItemPrice);
           break;
         default:
-          items = userItems.OrderBy(r => r.ItemId);
+          items = allItems.OrderBy(r => r.ItemId);
           break;
       }
       return View(items);

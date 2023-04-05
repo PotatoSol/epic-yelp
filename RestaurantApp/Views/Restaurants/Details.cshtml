@@ -1,14 +1,15 @@
 @{
   Layout = "_Layout";
 }
+
 @using RestaurantApp.Models
 @model RestaurantApp.Models.Restaurant
 
-<h4>Restaurant Details</h4>
+<h2>Restaurant Details</h2>
 <hr />
 <h3>@Html.DisplayNameFor(model => model.RestaurantName): @Html.DisplayFor(model => model.RestaurantName)</h3>
 
-@if(@Model.JoinEntities.Count == 0)
+@if (@Model.JoinEntities.Count == 0)
 {
   <p>This restaurant does not have any items</p>
 }
@@ -16,18 +17,19 @@ else
 {
   <h4>Items this Restaurant has:</h4>
   <ul>
-  @foreach(RestaurantItem join in Model.JoinEntities)
-  {
-    <li>@join.Item.ItemName</li>
-    @using (Html.BeginForm("DeleteJoin", "Restaurants"))
+  @foreach (RestaurantItem join in Model.JoinEntities)
     {
-      @Html.Hidden("joinId", @join.RestaurantItemId)
-      <input type="submit" value="Delete"/>
+      <li>@join.Item.ItemName --- $@join.Item.ItemPrice</li>
+      //set dashes equal to 20 - itemname
+      @using (Html.BeginForm("DeleteJoin", "Restaurants"))
+      {
+        @Html.Hidden("joinId", @join.RestaurantItemId)
+        <input type="submit" value="Delete" />
+      }
     }
-  }
   </ul>
 }
-@if(@Model.ReviewJoin.Count == 0)
+@if (@Model.ReviewJoin.Count == 0)
 {
   <p>This restaurant does not have any reviews</p>
 }
@@ -35,24 +37,18 @@ else
 {
   <h4>Reviews for this Restaurant:</h4>
   <ul>
-  @foreach(RestaurantReview join in Model.ReviewJoin)
-  {
-    <li>@join.Review.ReviewTitle</li>
-    @using (Html.BeginForm("DeleteJoin", "Reviews"))
+  @foreach (RestaurantReview join in Model.ReviewJoin)
     {
-      @Html.Hidden("joinId", @join.RestaurantReviewId)
-      <input type="submit" value="Delete"/>
+      <li>@join.Review.ReviewTitle</li>
+      @using (Html.BeginForm("DeleteJoin", "Reviews"))
+      {
+        @Html.Hidden("joinId", @join.RestaurantReviewId)
+        @Html.Hidden("restaurantID", Model.RestaurantId)
+        <input type="submit" value="Delete" />
+      }
     }
-  }
   </ul>
 }
-
-
-
-
-
-
-
 <p>@Html.ActionLink("Add a Review", "Create", "Reviews", new { id = Model.RestaurantId })</p>
 <p>@Html.ActionLink("Add a Item", "AddItem", new { id = Model.RestaurantId })</p>
 <p>@Html.ActionLink("Edit Restaurant", "Edit", new { id = Model.RestaurantId })</p>

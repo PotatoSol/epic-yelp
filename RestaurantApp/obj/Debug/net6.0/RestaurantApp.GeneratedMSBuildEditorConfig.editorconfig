@@ -5,117 +5,144 @@ build_property.UsingMicrosoftNETSdkWeb = true
 build_property.ProjectTypeGuids = 
 build_property.InvariantGlobalization = 
 build_property.PlatformNeutralAssembly = 
-build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = RestaurantApp
 build_property.RootNamespace = RestaurantApp
-build_property.ProjectDir = /Users/viradethxay-ananh/Desktop/RestaurantApp.Solution /RestaurantApp/
+build_property.ProjectDir = /Users/Chill/Desktop/epic-yelp/RestaurantApp/
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = /Users/viradethxay-ananh/Desktop/RestaurantApp.Solution /RestaurantApp
+build_property.MSBuildProjectDirectory = /Users/Chill/Desktop/epic-yelp/RestaurantApp
 build_property._RazorSourceGeneratorDebug = 
 
-[/Users/viradethxay-ananh/Desktop/RestaurantApp.Solution /RestaurantApp/Views/Account/Index.cshtml]
+[/Users/Chill/Desktop/epic-yelp/RestaurantApp/Views/Account/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/viradethxay-ananh/Desktop/RestaurantApp.Solution /RestaurantApp/Views/Account/Login.cshtml]
+[/Users/Chill/Desktop/epic-yelp/RestaurantApp/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9Mb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/viradethxay-ananh/Desktop/RestaurantApp.Solution /RestaurantApp/Views/Account/Register.cshtml]
+[/Users/Chill/Desktop/epic-yelp/RestaurantApp/Views/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9SZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/viradethxay-ananh/Desktop/RestaurantApp.Solution /RestaurantApp/Views/Home/Index.cshtml]
+[/Users/Chill/Desktop/epic-yelp/RestaurantApp/Views/Account/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9VcGRhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/Chill/Desktop/epic-yelp/RestaurantApp/Views/Admin/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/Chill/Desktop/epic-yelp/RestaurantApp/Views/Admin/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/Chill/Desktop/epic-yelp/RestaurantApp/Views/Admin/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vVXBkYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/Chill/Desktop/epic-yelp/RestaurantApp/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/viradethxay-ananh/Desktop/RestaurantApp.Solution /RestaurantApp/Views/Home/Privacy.cshtml]
+[/Users/Chill/Desktop/epic-yelp/RestaurantApp/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/viradethxay-ananh/Desktop/RestaurantApp.Solution /RestaurantApp/Views/Items/AddRestaurant.cshtml]
+[/Users/Chill/Desktop/epic-yelp/RestaurantApp/Views/Items/AddRestaurant.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSXRlbXMvQWRkUmVzdGF1cmFudC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/viradethxay-ananh/Desktop/RestaurantApp.Solution /RestaurantApp/Views/Items/Create.cshtml]
+[/Users/Chill/Desktop/epic-yelp/RestaurantApp/Views/Items/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSXRlbXMvQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/viradethxay-ananh/Desktop/RestaurantApp.Solution /RestaurantApp/Views/Items/Delete.cshtml]
+[/Users/Chill/Desktop/epic-yelp/RestaurantApp/Views/Items/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSXRlbXMvRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/viradethxay-ananh/Desktop/RestaurantApp.Solution /RestaurantApp/Views/Items/Details.cshtml]
+[/Users/Chill/Desktop/epic-yelp/RestaurantApp/Views/Items/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSXRlbXMvRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/viradethxay-ananh/Desktop/RestaurantApp.Solution /RestaurantApp/Views/Items/Edit.cshtml]
+[/Users/Chill/Desktop/epic-yelp/RestaurantApp/Views/Items/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSXRlbXMvRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/viradethxay-ananh/Desktop/RestaurantApp.Solution /RestaurantApp/Views/Items/Index.cshtml]
+[/Users/Chill/Desktop/epic-yelp/RestaurantApp/Views/Items/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSXRlbXMvSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/viradethxay-ananh/Desktop/RestaurantApp.Solution /RestaurantApp/Views/Restaurants/AddItem.cshtml]
+[/Users/Chill/Desktop/epic-yelp/RestaurantApp/Views/Restaurants/AddItem.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUmVzdGF1cmFudHMvQWRkSXRlbS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/viradethxay-ananh/Desktop/RestaurantApp.Solution /RestaurantApp/Views/Restaurants/AddReview.cshtml]
+[/Users/Chill/Desktop/epic-yelp/RestaurantApp/Views/Restaurants/AddReview.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUmVzdGF1cmFudHMvQWRkUmV2aWV3LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/viradethxay-ananh/Desktop/RestaurantApp.Solution /RestaurantApp/Views/Restaurants/Create.cshtml]
+[/Users/Chill/Desktop/epic-yelp/RestaurantApp/Views/Restaurants/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUmVzdGF1cmFudHMvQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/viradethxay-ananh/Desktop/RestaurantApp.Solution /RestaurantApp/Views/Restaurants/Delete.cshtml]
+[/Users/Chill/Desktop/epic-yelp/RestaurantApp/Views/Restaurants/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUmVzdGF1cmFudHMvRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/viradethxay-ananh/Desktop/RestaurantApp.Solution /RestaurantApp/Views/Restaurants/Details.cshtml]
+[/Users/Chill/Desktop/epic-yelp/RestaurantApp/Views/Restaurants/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUmVzdGF1cmFudHMvRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/viradethxay-ananh/Desktop/RestaurantApp.Solution /RestaurantApp/Views/Restaurants/Edit.cshtml]
+[/Users/Chill/Desktop/epic-yelp/RestaurantApp/Views/Restaurants/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUmVzdGF1cmFudHMvRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/viradethxay-ananh/Desktop/RestaurantApp.Solution /RestaurantApp/Views/Restaurants/Index.cshtml]
+[/Users/Chill/Desktop/epic-yelp/RestaurantApp/Views/Restaurants/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUmVzdGF1cmFudHMvSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/viradethxay-ananh/Desktop/RestaurantApp.Solution /RestaurantApp/Views/Reviews/Create.cshtml]
+[/Users/Chill/Desktop/epic-yelp/RestaurantApp/Views/Reviews/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUmV2aWV3cy9DcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/viradethxay-ananh/Desktop/RestaurantApp.Solution /RestaurantApp/Views/Reviews/Delete.cshtml]
+[/Users/Chill/Desktop/epic-yelp/RestaurantApp/Views/Reviews/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUmV2aWV3cy9EZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/viradethxay-ananh/Desktop/RestaurantApp.Solution /RestaurantApp/Views/Reviews/Details.cshtml]
+[/Users/Chill/Desktop/epic-yelp/RestaurantApp/Views/Reviews/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUmV2aWV3cy9EZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/viradethxay-ananh/Desktop/RestaurantApp.Solution /RestaurantApp/Views/Shared/Error.cshtml]
+[/Users/Chill/Desktop/epic-yelp/RestaurantApp/Views/Role/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUm9sZS9DcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/Chill/Desktop/epic-yelp/RestaurantApp/Views/Role/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUm9sZS9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/Chill/Desktop/epic-yelp/RestaurantApp/Views/Role/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUm9sZS9VcGRhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/Chill/Desktop/epic-yelp/RestaurantApp/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/viradethxay-ananh/Desktop/RestaurantApp.Solution /RestaurantApp/Views/Shared/_ValidationScriptsPartial.cshtml]
+[/Users/Chill/Desktop/epic-yelp/RestaurantApp/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/viradethxay-ananh/Desktop/RestaurantApp.Solution /RestaurantApp/Views/_ViewImports.cshtml]
+[/Users/Chill/Desktop/epic-yelp/RestaurantApp/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/viradethxay-ananh/Desktop/RestaurantApp.Solution /RestaurantApp/Views/_ViewStart.cshtml]
+[/Users/Chill/Desktop/epic-yelp/RestaurantApp/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/viradethxay-ananh/Desktop/RestaurantApp.Solution /RestaurantApp/Views/Shared/_Layout.cshtml]
+[/Users/Chill/Desktop/epic-yelp/RestaurantApp/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-cla8w9mvnk
