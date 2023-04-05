@@ -24,7 +24,6 @@ namespace RestaurantApp
                         )
                       );
 
-      // New code below!!
       builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<RestaurantAppContext>()
                 .AddDefaultTokenProviders();
@@ -37,7 +36,6 @@ namespace RestaurantApp
 
       app.UseRouting();
 
-      // New code below!
       app.UseAuthentication(); 
       app.UseAuthorization();
 

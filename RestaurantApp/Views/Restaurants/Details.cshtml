@@ -19,7 +19,7 @@ else
   <ul>
   @foreach(RestaurantItem join in Model.JoinEntities)
   {
-    <li>@join.Item.ItemName</li>
+    <li>@join.Item.ItemName --- $@join.Item.ItemPrice</li> //set dashes equal to 20 - itemname
     @using (Html.BeginForm("DeleteJoin", "Restaurants"))
     {
       @Html.Hidden("joinId", @join.RestaurantItemId)
