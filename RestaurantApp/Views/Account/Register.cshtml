@@ -6,26 +6,41 @@
 
 @model RegisterViewModel
 
-<h2>Register a new user</h2>
+<h4>Sign Up</h4>
 <hr />
 
-@if(!ViewData.ModelState.IsValid) 
+@if (!ViewData.ModelState.IsValid)
 {
-  @Html.ValidationSummary("Please fix the following error(s) and then resubmit the form:") 
+  @Html.ValidationSummary("Please fix the following error(s) and then resubmit the form:")
 }
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
 
-@using (Html.BeginForm("Register", "Account", FormMethod.Post))
-{
-  @Html.LabelFor(user => user.Email)
-  @Html.TextBoxFor(user=> user.Email)
+      @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal" }))
+      {
+        <div class="form-group">
+          @Html.LabelFor(user => user.Email)
+          @Html.TextBoxFor(user=> user.Email, new { @class="form-control col-sm-3", id="control-id1"})
+        </div>
 
-  @Html.LabelFor(user=> user.Password)
-  @Html.EditorFor(user=> user.Password)
 
-  @Html.LabelFor(user=> user.ConfirmPassword)
-  @Html.EditorFor(user=> user.ConfirmPassword)
+        <div class="form-group">
+          @Html.LabelFor(user => user.Password)
+          <br>
+          @Html.EditorFor(user=> user.Password, new { @class="form-control col-sm-3", id="control-id2"})
+        </div>
 
-  <input type="submit" value="Register" />
-}
+        <div class="form-group">
+          @Html.LabelFor(user=> user.ConfirmPassword)
+          <br>
+          @Html.EditorFor(user=> user.ConfirmPassword, new { @class="form-control col-sm-3", id="control-id3"})
+        </div>
 
-<p>@Html.ActionLink("Back to accounts page", "Index")</p>
+
+        <input type="submit" class="btn btn-primary " value="Register" />
+      }
+    </div>
+  </div>
+</div>
+
