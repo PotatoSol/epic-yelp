@@ -1,11 +1,10 @@
 @{
   Layout = "_Layout";
 }
-
 @using RestaurantApp.Models
 @model RestaurantApp.Models.Restaurant
 
-<h2>Restaurant Details</h2>
+<h4>Restaurant Details</h4>
 <hr />
 <h3>@Html.DisplayNameFor(model => model.RestaurantName): @Html.DisplayFor(model => model.RestaurantName)</h3>
 
@@ -47,6 +46,13 @@ else
   }
   </ul>
 }
+
+
+
+
+
+
+
 <p>@Html.ActionLink("Add a Review", "Create", "Reviews", new { id = Model.RestaurantId })</p>
 <p>@Html.ActionLink("Add a Item", "AddItem", new { id = Model.RestaurantId })</p>
 <p>@Html.ActionLink("Edit Restaurant", "Edit", new { id = Model.RestaurantId })</p>
