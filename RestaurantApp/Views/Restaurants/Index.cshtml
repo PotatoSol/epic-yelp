@@ -13,35 +13,33 @@
     <tr>
       <th>Name of Restaurant</th>
       <th>Hours</th>
-      @* <th>Actions</th> *@
+      <th>Actions</th> 
     </tr>
   </thead>
 
   <tbody>
     @foreach (Restaurant restaurant in Model)
     {
-      <tr> @* begining of first row *@
+      <tr> @* begining of the first row *@
         <td>
           <div class="d-flex align-items-center">
             <div class="ms-3">
-              @* @restaurant.RestaurantName *@
-              @Html.ActionLink($"{@restaurant.RestaurantName}", "Details", new { id = restaurant.RestaurantId })
+              @restaurant.RestaurantName
             </div>
           </div>
         </td>
         <td>
           <p class="fw-normal mb-1">@restaurant.RestaurantHours</p>
         </td>
-        @* <td>
+        <td>
           <button type="button" class="btn btn-link btn-sm btn-rounded">
             @Html.ActionLink("Edit", "Details", new { id = restaurant.RestaurantId })
           </button>
-        </td> *@
+        </td> 
       </tr>
     }
   </tbody>
 </table>
-@* <p>@Html.ActionLink("Add New Restaurant", "Create")</p> *@
 
 <button type="button" class="btn btn-primary me-3">
   <a class="text-white" href="@Url.Action("Create","Restaurants")">Add New Restaurant</a>
