@@ -2,17 +2,11 @@
   Layout = "_Layout";
 }
 
-<h2>Account Management</h2>
+<h4>Profile</h4>
 <hr />
 
 @if (User.Identity.IsAuthenticated)
 {
   <p>Hello @User.Identity.Name!</p>
-
 }
 
-else
-{
-  @* <p>@Html.ActionLink("Register", "Register")</p> *@
-  @* <p>@Html.ActionLink("Log in", "Login")</p> *@
-}
