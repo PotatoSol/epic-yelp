@@ -3,7 +3,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using RestaurantApp.Models;
 using Microsoft.AspNetCore.Identity;
-
  
 namespace RestaurantApp
 {

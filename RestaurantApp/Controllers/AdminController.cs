@@ -1,9 +1,11 @@
 using RestaurantApp.Models;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace RestaurantApp.Controllers
 {
+  [Authorize(Roles = "Admin, Developer")]
   public class AdminController : Controller
   {
     private UserManager<ApplicationUser> userManager;

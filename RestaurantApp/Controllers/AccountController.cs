@@ -2,8 +2,8 @@
 // using Microsoft.AspNetCore.Identity;
 // using Microsoft.AspNetCore.Authorization;
 // using RestaurantApp.Models;
-// using System.Threading.Tasks;
-// using RestaurantApp.ViewModels;
+using System.Threading.Tasks;
+using RestaurantApp.ViewModels;
 
 // namespace RestaurantApp.Controllers
 // {
@@ -165,16 +165,53 @@ using RestaurantApp.Models;
 
 namespace RestaurantApp.Controllers
 {
-  [Authorize]
   public class AccountController : Controller
   {
+    private readonly RestaurantAppContext _db;
     private UserManager<ApplicationUser> userManager;
+    private IPasswordHasher<ApplicationUser> passwordHasher;
     private SignInManager<ApplicationUser> signInManager;
 
-    public AccountController(UserManager<ApplicationUser> userMgr, SignInManager<ApplicationUser> signinMgr)
+    public AccountController(UserManager<ApplicationUser> userMgr, SignInManager<ApplicationUser> signinMgr, IPasswordHasher<ApplicationUser> passwordHash, RestaurantAppContext db)
     {
       userManager = userMgr;
       signInManager = signinMgr;
+      passwordHasher = passwordHash;
+      _db = db;
+    }
+    [HttpPost]
+    public async Task<ActionResult> Register(RegisterViewModel model)
+    {
+      if (!ModelState.IsValid)
+      {
+        return View(model);
+      }
+      else
+      {
+        ApplicationUser user = new ApplicationUser
+        {
+          UserName = model.Email,
+          Email = model.Email,
+
+        };
+        IdentityResult result = await userManager.CreateAsync(user, model.Password);
+        if (result.Succeeded)
+        {
+          return RedirectToAction("Index");
+        }
+        else
+        {
+          foreach (IdentityError error in result.Errors)
+          {
+            ModelState.AddModelError("", error.Description);
+          }
+          return View(model);
+        }
+      }
+    }
+    public ActionResult Login()
+    {
+      return View();
     }
 
     [AllowAnonymous]
@@ -209,5 +246,10 @@ namespace RestaurantApp.Controllers
       await signInManager.SignOutAsync();
       return RedirectToAction("Index", "Home");
     }
+    public IActionResult AccessDenied()
+    {
+      return View();
+    }
+
   }
 }

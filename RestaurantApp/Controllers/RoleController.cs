@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using RestaurantApp.Models;
 
 
-namespace Identity.Controllers
+namespace RestaurantApp.Controllers
 {
   public class RoleController : Controller
   {
