@@ -48,7 +48,7 @@ namespace RestaurantApp.Controllers
           reviews = userReviews.OrderBy(r => r.ReviewId);
           break;
       }
-      return View(reviews);
+      return View(reviews.ToList());
     }
 
     public ActionResult Create()
@@ -122,12 +122,12 @@ namespace RestaurantApp.Controllers
       return RedirectToAction("Index");
     }
 
-    // public ActionResult AddRestaurant(int id)
-    // {
-    //   Review thisReview = _db.Reviews.FirstOrDefault(reviews => reviews.ReviewId == id);
-    //   ViewBag.RestaurantId = new SelectList(_db.Restaurants, "RestaurantId", "RestaurantName");
-    //   return View(thisReview);
-    // }
+    public ActionResult AddRestaurant(int id)
+    {
+      Review thisReview = _db.Reviews.FirstOrDefault(reviews => reviews.ReviewId == id);
+      ViewBag.RestaurantId = new SelectList(_db.Restaurants, "RestaurantId", "RestaurantName");
+      return View(thisReview);
+    }
 
     [HttpPost]
     public ActionResult AddRestaurant(Review review, int restaurantId)
@@ -142,15 +142,15 @@ namespace RestaurantApp.Controllers
       }
       return RedirectToAction("Details", new { id = review.ReviewId });
     }
-    [HttpPost]
+   [HttpPost]
 
     [HttpPost]
-    public ActionResult DeleteJoin(int joinId, int restaurantID)
+    public ActionResult DeleteJoin(int joinId, int restaurantId )
     {
       RestaurantReview joinEntry = _db.RestaurantReviews.FirstOrDefault(entry => entry.RestaurantReviewId == joinId);
       _db.RestaurantReviews.Remove(joinEntry);
       _db.SaveChanges();
-      return RedirectToAction("Details", "Restaurants", new { id = restaurantID});
+      return RedirectToAction("Details","Restaurants", new { id = restaurantId } );
     }
   }
 }

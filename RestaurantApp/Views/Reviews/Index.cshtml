@@ -6,21 +6,21 @@
 
 @if (@Model.Count == 0)
 {
-  <h3>No restaurants have been added yet!</h3>
+  <h3>No reviews have been added yet!</h3>
 }
 
 <table class="table align-middle mb-0 bg-white">
   
   <thead class="bg-light">
     <tr>
-      <th>Name of Restaurant</th>
-      <th>Hours</th>
-      <th>Actions</th> 
+      <th>Review Title</th>
+      <th>Review Message</th>
+      <th>Review Details</th> 
     </tr>
   </thead>
 
   <tbody>
-    @foreach (Restaurant restaurant in Model)
+    @foreach (Review review in Model)
     {
       <tr> @* begining of the first row *@
         
@@ -28,18 +28,18 @@
         <td>
           <div class="d-flex align-items-center">
             <div class="ms-3">
-              @restaurant.RestaurantName
+              @review.ReviewTitle
             </div>
           </div>
         </td>
         
         <td>
-          <p class="fw-normal mb-1">@restaurant.RestaurantHours</p>
+          <p class="fw-normal mb-1">@review.ReviewText</p>
         </td>
         
         <td>
           <button type="button" class="btn btn-link btn-sm btn-rounded">
-            @Html.ActionLink("Edit", "Details", new { id = restaurant.RestaurantId })
+            @Html.ActionLink("Edit", "Edit", new { id = review.ReviewId })
           </button>
         </td> 
     
@@ -49,6 +49,6 @@
 </table>
 
 <button type="button" class="btn btn-primary me-3">
-  <a class="text-white" href="@Url.Action("Create","Restaurants")">Add New Restaurant</a>
+  <a class="text-white" href="@Url.Action("Create","Reviews")">Add New Review</a>
 </button>
 

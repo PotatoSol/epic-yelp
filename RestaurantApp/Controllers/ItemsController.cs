@@ -47,7 +47,8 @@ namespace RestaurantApp.Controllers
           items = allItems.OrderBy(r => r.ItemId);
           break;
       }
-      return View(items);
+      
+      return View(items.ToList());
     }
 
     public ActionResult Create()
