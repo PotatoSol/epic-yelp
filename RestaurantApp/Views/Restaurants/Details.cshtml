@@ -6,11 +6,11 @@
 
 @if (@Model.JoinEntities.Count == 0)
 {
-  
-  <p><b>Restaurant:</b> @Html.DisplayFor(model => model.RestaurantName) does not have any items!</p>
+  @* <p><b>Restaurant:</b> @Html.DisplayFor(model => model.RestaurantName) does not have any items!</p> *@
+  <b>Restaurant: @Html.DisplayFor(model => model.RestaurantName)</b> <p>Does not have any  items!</p>
   <button type="button" class="btn btn-primary">
-<a class="text-white" href="@Url.Action("Create","Items", 
-new { id = Model.RestaurantId })">Add item</a></button>
+  <a class="text-white" href="@Url.Action("Create","Items", 
+  new { id = Model.RestaurantId })">Add item</a></button>
 
 }
 else
@@ -50,7 +50,8 @@ else
 }
 @if(@Model.ReviewJoin.Count == 0)
 {
-    <p>Restaurant does not have any reviews!</p>
+   <br>
+   <b>Restaurant: @Html.DisplayFor(model => model.RestaurantName)</b> <p>Does not have any reviews!</p>
 }
 else
 {
@@ -96,6 +97,9 @@ else
 
 
 
+<button type="button" class="btn btn-primary me-3">
+  <a class="text-white" href="@Url.Action("Create","Reviews")">Add New Review</a>
+</button>
 
 <button type="button" class="btn btn-secondary">
 <a class="text-white" href="@Url.Action("Edit","Restaurants", 

@@ -80,6 +80,7 @@ namespace RestaurantApp.Controllers
         _db.SaveChanges();
       }
         return RedirectToAction("Details","Restaurants", new { id = restaurantId });
+        //  return RedirectToAction("Index","Reviews");
       }
     }
 
