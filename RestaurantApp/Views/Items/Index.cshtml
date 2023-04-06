@@ -1,50 +1,52 @@
 @{
   Layout = "_Layout";
 }
-@model IEnumerable<RestaurantApp.Models.Item>
 @using RestaurantApp.Models;
-@{
 
-  ViewData["Title"] = "Index";
+@if (@Model.Count == 0)
+{
+  <h3>No restaurants have been added yet!</h3>
 }
 
-<h1>Items for @User.Identity.Name</h1>
-
-<table class="table">
-    <thead>
-        <tr>
-                <th>
-                        <a href='/Items?sortOrder=name_desc'>
-                        @* @Html.DisplayNameFor(model => model.ItemName)</a> *@
-                        Item Name</a>
-
-                </th>
-                <th>
-                        <a href='/Items?sortOrder=price_desc'>
-                        @* @Html.DisplayNameFor(model => model.ItemPrice)</a> *@
-                        Item Price</a>
-                </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@if (!Model.Any())
-{
-  <h3>No items have been added yet!</h3>
-} 
-else
-{
+<table class="table align-middle mb-0 bg-white">
   
+  <thead class="bg-light">
+    <tr>
+      <th>Item</th>
+      <th>Price</th>
+      <th>Actions</th> 
+    </tr>
+  </thead>
+
+  <tbody>
     @foreach (Item item in Model)
     {
       <tr>
-        <td>@Html.ActionLink($"{item.ItemName}", "Details", new { id = item.ItemId })</td>
-        <td>@Html.ActionLink($"${item.ItemPrice}", "Details", new { id = item.ItemId })</td>
-      </tr>
+        
+        
+        <td>
+          <div class="d-flex align-items-center">
+            <div class="ms-3">
+              @item.ItemName
+            </div>
+          </div>
+        </td>
+        
+        <td>
+          <p class="fw-normal mb-1">@item.ItemPrice</p>
+        </td>
+        
+        <td>
+          <button type="button" class="btn btn-link btn-sm btn-rounded">
+            @Html.ActionLink("Edit", "Details", new { id = item.ItemId })
+          </button>
+        </td> 
+    
+    </tr>
     }
-  
-}
-    </tbody>
-    </table>
-<p>@Html.ActionLink("Add new item", "Create")</p>
-<p>@Html.ActionLink("Home", "Index", "Home")</p>
+  </tbody>
+</table>
+
+<button type="button" class="btn btn-primary me-3">
+  <a class="text-white" href="@Url.Action("Create","Items")">Add New Item</a>
+</button>

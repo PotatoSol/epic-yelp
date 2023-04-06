@@ -11,7 +11,7 @@ using System.Security.Claims;
 
 namespace RestaurantApp.Controllers
 {
-  [Authorize]
+  // [Authorize]
   public class ItemsController : Controller
   {
     private readonly RestaurantAppContext _db;
@@ -27,6 +27,7 @@ namespace RestaurantApp.Controllers
     {
       string userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
       ApplicationUser currentUser = await _userManager.FindByIdAsync(userId);
+      
       List<Item> userItems = _db.Items
                           .Where(entry => entry.User.Id == currentUser.Id)
                           .Include(item => item.JoinEntities)
@@ -48,7 +49,8 @@ namespace RestaurantApp.Controllers
           items = userItems.OrderBy(r => r.ItemId);
           break;
       }
-      return View(items);
+      
+      return View(items.ToList());
     }
 
     public ActionResult Create()
