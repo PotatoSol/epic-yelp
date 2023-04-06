@@ -1,0 +1,34 @@
+@{
+  Layout = "_Layout";
+}
+
+@model RestaurantApp.Models.Review
+
+<h5>Edit: @Html.DisplayFor(model => model.ReviewTitle)</h5>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.ReviewId)
+
+    @Html.LabelFor(model => model.ReviewTitle, "Review Title:")
+
+    @Html.EditorFor(model => model.ReviewTitle, new { @class="form-control col-sm-3", id="control-id1"})
+    
+    <br>
+    @Html.LabelFor(model => model.ReviewText, "Review Text:")
+    
+    @Html.EditorFor(model => model.ReviewText, new { @class="form-control col-sm-3", id="control-id1"})
+    <br>
+    <input type="submit" value="Save"/>
+    
+}
+    </div>
+  </div>
+</div>
+<br>
+<button type="button" class="btn btn-dark">
+<a class="text-white" href="@Url.Action("Details","Reviews", 
+new { id = Model.ReviewId })">Back to list</a></button>

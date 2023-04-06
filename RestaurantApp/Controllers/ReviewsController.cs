@@ -48,7 +48,7 @@ namespace RestaurantApp.Controllers
           reviews = userReviews.OrderBy(r => r.ReviewId);
           break;
       }
-      return View(reviews);
+      return View(reviews.ToList());
     }
 
     public ActionResult Create()

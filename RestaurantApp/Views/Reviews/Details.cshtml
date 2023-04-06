@@ -21,6 +21,7 @@ else{
       <th>Name of Review</th>
       <th>Restaurant</th>
       <th>Actions</th> 
+      <th>Edit</th> 
     </tr>
   </thead>
   <tbody>
@@ -43,16 +44,24 @@ else{
         @using (Html.BeginForm("DeleteJoin", "Reviews"))
         {
           @Html.Hidden("joinId", @join.RestaurantReviewId)
-          <input type="submit" value="Delete"/>
+          <input type="submit" class="btn btn-primary" value="Delete"/>
+       
         }
-        </td>     
+        </td>
+
+        <td>
+          <button type="button" class="btn btn-primary">
+            <a class="text-white" href="@Url.Action("Edit","Reviews", 
+            new { id = Model.ReviewId })">Edit Review</a>
+          </button>     
+        </td>          
       </tr>
     }
   </tbody>
 </table>
 }
 
-<p>@Html.ActionLink("Add a restaurant", "AddRestaurant", new { id = Model.ReviewId })</p>
-<p>@Html.ActionLink("Edit Review", "Edit", new { id = Model.ReviewId })</p>
+@* <p>@Html.ActionLink("Add a restaurant", "AddRestaurant", new { id = Model.ReviewId })</p> *@
+@* <p>@Html.ActionLink("Edit Review", "Edit", new { id = Model.ReviewId } )</p> *@
 <p>@Html.ActionLink("Delete Review", "Delete", new { id = Model.ReviewId })</p>
 <p>@Html.ActionLink("Back to list", "Index")</p>

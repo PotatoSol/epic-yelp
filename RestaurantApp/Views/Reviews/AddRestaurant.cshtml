@@ -1,19 +1,21 @@
 @{
   Layout = "_Layout";
 }
-
 @model RestaurantApp.Models.Review
-<h2>Add a restaurant</h2>
+@* <h5>Connect restaurant to this review</h5>
 
-<h4>Add a restaurant to this review: @Html.DisplayFor(model => model)</h4>
+<h4>Add a restaurant to this review: @Html.DisplayFor(model => model)</h4> *@
 
 @using (Html.BeginForm())
 {
     @Html.HiddenFor(model => model.ReviewId)
 
-    @Html.Label("Select restaurant")
+    @Html.Label("Connect review to this restaurant: ")
     @Html.DropDownList("RestaurantId")
 
     <input type="submit" value="Save" />
 }
-<p>@Html.ActionLink("Back to list", "Index")</p>
+
+
+<button type="button" class="btn btn-dark">
+<a class="text-white" href="@Url.Action("Details","Reviews", new { id =  Model.ReviewId })">Back to list</a></button>

@@ -6,7 +6,8 @@
 
 @if (@Model.JoinEntities.Count == 0)
 {
-  <p>@Html.DisplayFor(model => model.RestaurantName) does not have any items!</p>
+  
+  <p><b>Restaurant:</b> @Html.DisplayFor(model => model.RestaurantName) does not have any items!</p>
   <button type="button" class="btn btn-primary">
 <a class="text-white" href="@Url.Action("Create","Items", 
 new { id = Model.RestaurantId })">Add item</a></button>
@@ -59,7 +60,7 @@ else
       <th scope="col">Title</th>
       <th scope="col">Review</th>
       <th scope="col">Action</th>
-      <th scope="col">Edit</th>
+      @* <th scope="col">Edit</th> *@
 
     </tr>
   </thead>
@@ -79,11 +80,12 @@ else
            <input type="submit" class="btn btn-danger" value="Delete review"/>} 
           </td>
 
-          <td>
+          @* <td>
             <button type="button" class="btn btn-secondary">
             <a class="text-white" href="@Url.Action("Details","Reviews", 
             new { id = Model.RestaurantId })">Edit review</a></button>
-          </td>    
+          </td>     *@
+        
         </tr>
       }
     </tbody>
@@ -94,8 +96,6 @@ else
 
 
 
-<button type="button" class="btn btn-primary">
-<a class="text-white" href="@Url.Action("Create","Reviews", new { id = Model.RestaurantId })">Add a review</a></button>
 
 <button type="button" class="btn btn-secondary">
 <a class="text-white" href="@Url.Action("Edit","Restaurants", 
