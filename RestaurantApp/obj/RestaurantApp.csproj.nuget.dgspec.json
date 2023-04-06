@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\solmi\\desktop\\epic-yelp\\RestaurantApp\\RestaurantApp.csproj": {}
+    "C:\\Users\\solmi\\Desktop\\epic-yelp\\RestaurantApp\\RestaurantApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\solmi\\desktop\\epic-yelp\\RestaurantApp\\RestaurantApp.csproj": {
+    "C:\\Users\\solmi\\Desktop\\epic-yelp\\RestaurantApp\\RestaurantApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\solmi\\desktop\\epic-yelp\\RestaurantApp\\RestaurantApp.csproj",
+        "projectUniqueName": "C:\\Users\\solmi\\Desktop\\epic-yelp\\RestaurantApp\\RestaurantApp.csproj",
         "projectName": "RestaurantApp",
-        "projectPath": "C:\\Users\\solmi\\desktop\\epic-yelp\\RestaurantApp\\RestaurantApp.csproj",
+        "projectPath": "C:\\Users\\solmi\\Desktop\\epic-yelp\\RestaurantApp\\RestaurantApp.csproj",
         "packagesPath": "C:\\Users\\solmi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\solmi\\desktop\\epic-yelp\\RestaurantApp\\obj\\",
+        "outputPath": "C:\\Users\\solmi\\Desktop\\epic-yelp\\RestaurantApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\solmi\\AppData\\Roaming\\NuGet\\NuGet.Config"

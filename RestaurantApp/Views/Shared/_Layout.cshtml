@@ -51,6 +51,12 @@
                     </li>
                 </ul>
 
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Index","Reviews")">Reviews</a>
+                    </li>
+                </ul>
+
                 <!-- IsAuthenticated -->
                 @if (User?.Identity?.IsAuthenticated ?? false)
                 {
@@ -98,11 +104,11 @@
             @RenderBody()
         </main>
     </div>
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            <i>Eating food taste better with friends</i> <a asp-area="" asp-controller="Home" asp-action="Privacy"></a>
-        </div>
-    </footer>
+    @* <footer class="border-top footer text-muted">
+         <div class="container">
+            <i>Eating food taste better with friends</i> <a asp-area="" asp-controller="Home" asp-action="Privacy"></a> 
+        </div>  
+    </footer> *@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
