@@ -27,7 +27,7 @@ else{
   <tbody>
     @foreach(RestaurantReview join in Model.ReviewJoin)
     {
-      <tr> @* begining of the first row *@
+      <tr> @* beginning of the first row *@
         <td>
           <div class="d-flex align-items-center">
             <div class="ms-3">
@@ -37,7 +37,7 @@ else{
         </td>
 
         <td>
-          <p class="fw-normal mb-1">@join.Restaurant.RestaurantName</p>
+          <p class="fw-normal mb-1">@join.Restaurant.RestaurantName <br>   Rating: @join.Review.ReviewRating</p>
         </td>
 
         <td>
@@ -51,8 +51,8 @@ else{
 
         <td>
           <button type="button" class="btn btn-primary">
-            <a class="text-white" href="@Url.Action("Edit","Reviews", 
-            new { id = Model.ReviewId })">Edit Review</a>
+            <a class="text-white" href='@Url.Action("Edit","Reviews", 
+            new { id = Model.ReviewId })'>Edit Review</a>
           </button>     
         </td>          
       </tr>

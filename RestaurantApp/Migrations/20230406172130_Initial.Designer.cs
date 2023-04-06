@@ -11,8 +11,8 @@ using RestaurantApp.Models;
 namespace RestaurantApp.Migrations
 {
     [DbContext(typeof(RestaurantAppContext))]
-    [Migration("20230406163117_AddAfterMergeFix")]
-    partial class AddAfterMergeFix
+    [Migration("20230406172130_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -250,6 +250,9 @@ namespace RestaurantApp.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
+                    b.Property<double>("RestaurantRating")
+                        .HasColumnType("double");
+
                     b.Property<string>("UserId")
                         .HasColumnType("varchar(255)");
 
@@ -310,6 +313,9 @@ namespace RestaurantApp.Migrations
 
                     b.Property<DateTime>("ReviewDate")
                         .HasColumnType("datetime(6)");
+
+                    b.Property<double>("ReviewRating")
+                        .HasColumnType("double");
 
                     b.Property<string>("ReviewText")
                         .IsRequired()

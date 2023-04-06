@@ -248,6 +248,9 @@ namespace RestaurantApp.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
+                    b.Property<double>("RestaurantRating")
+                        .HasColumnType("double");
+
                     b.Property<string>("UserId")
                         .HasColumnType("varchar(255)");
 
@@ -308,6 +311,9 @@ namespace RestaurantApp.Migrations
 
                     b.Property<DateTime>("ReviewDate")
                         .HasColumnType("datetime(6)");
+
+                    b.Property<double>("ReviewRating")
+                        .HasColumnType("double");
 
                     b.Property<string>("ReviewText")
                         .IsRequired()

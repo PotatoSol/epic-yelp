@@ -17,6 +17,10 @@
           @Html.TextBoxFor(model => model.ReviewTitle, new { @class="form-control col-sm-3", id="control-id2"})
         </div>
         <div class="form-group">
+          @Html.LabelFor(model => model.ReviewRating, "Review Rating")
+          @Html.TextBoxFor(model => model.ReviewRating, new { @class="form-control col-sm-3", id="control-id2"}) @* what is this control id *@
+        </div>
+        <div class="form-group">
           @Html.LabelFor(model => model.ReviewText, "Write Review")
           @Html.TextBoxFor(model => model.ReviewText, new { @class="form-control col-sm-3", id="control-id4"})
         </div>

@@ -14,6 +14,7 @@ namespace RestaurantApp.Models
     public DateTime ReviewDate { get; set; }
     public List<RestaurantReview> ReviewJoin { get;}
     public ApplicationUser User { get; set; }
+    public double ReviewRating { get; set; }
 
   }
 }

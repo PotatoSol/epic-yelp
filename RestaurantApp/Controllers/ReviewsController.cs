@@ -64,31 +64,47 @@ namespace RestaurantApp.Controllers
             return View();
         }
 
-        [HttpPost]
-        public async Task<ActionResult> Create(Review review, int restaurantId)
-        {
-            if (!ModelState.IsValid)
-            {
-                return View(review);
-            }
-            else
-            {
-                string userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-                ApplicationUser currentUser = await _userManager.FindByIdAsync(userId);
-                review.User = currentUser;
-                _db.Reviews.Add(review);
-                _db.SaveChanges();
-#nullable enable
-                RestaurantReview? joinEntity = _db.RestaurantReviews.FirstOrDefault(join => (join.RestaurantId == restaurantId && join.ReviewId == review.ReviewId));
-#nullable disable
-                if (joinEntity == null && restaurantId != 0)
-                {
-                    _db.RestaurantReviews.Add(new RestaurantReview() { RestaurantId = restaurantId, ReviewId = review.ReviewId });
-                    _db.SaveChanges();
-                }
-                return RedirectToAction("Details", "Restaurants", new { id = restaurantId });
-            }
+    [HttpPost]
+    public async Task<ActionResult> Create(Review review, int restaurantId)
+    {
+      if (!ModelState.IsValid)
+      {
+        return View(review);
+      }
+      else
+      {
+        string userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+        ApplicationUser currentUser = await _userManager.FindByIdAsync(userId);
+        review.User = currentUser;
+        _db.Reviews.Add(review);
+        _db.SaveChanges();
+    #nullable enable
+      RestaurantReview? joinEntity = _db.RestaurantReviews.FirstOrDefault(join => (join.RestaurantId == restaurantId && join.ReviewId == review.ReviewId));
+    #nullable disable
+      if (joinEntity == null && restaurantId != 0)
+      {
+        _db.RestaurantReviews.Add(new RestaurantReview() { RestaurantId = restaurantId, ReviewId = review.ReviewId });
+        _db.SaveChanges();
+      }
+      double averageRating = 0;
+      double count = 0;
+      List<RestaurantReview> ourReviews = _db.RestaurantReviews .ToList();
+      foreach(RestaurantReview aReview in ourReviews){
+        if(aReview.RestaurantId == restaurantId){
+          averageRating += _db.Reviews.FirstOrDefault(curr => (curr.ReviewId == aReview.ReviewId)).ReviewRating;
+          count++;
         }
+      }
+      averageRating = averageRating / count; 
+      Restaurant currentRestaurantRating = _db.Restaurants.FirstOrDefault(rest => rest.RestaurantId == restaurantId);
+      currentRestaurantRating.RestaurantRating = averageRating;
+      _db.Restaurants.Update(currentRestaurantRating);
+      _db.SaveChanges();
+      //_db.Reviews.Update(review);
+      //_db.SaveChanges();
+        return RedirectToAction("Details","Restaurants", new { id = restaurantId });
+      }
+    }
 
         public ActionResult Details(int id)
         {

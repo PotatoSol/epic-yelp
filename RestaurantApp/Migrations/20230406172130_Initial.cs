@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace RestaurantApp.Migrations
 {
-    public partial class AddAfterMergeFix : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -228,7 +228,8 @@ namespace RestaurantApp.Migrations
                     RestaurantHours = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     UserId = table.Column<string>(type: "varchar(255)", nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4")
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    RestaurantRating = table.Column<double>(type: "double", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -253,7 +254,8 @@ namespace RestaurantApp.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     ReviewDate = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     UserId = table.Column<string>(type: "varchar(255)", nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4")
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    ReviewRating = table.Column<double>(type: "double", nullable: false)
                 },
                 constraints: table =>
                 {
