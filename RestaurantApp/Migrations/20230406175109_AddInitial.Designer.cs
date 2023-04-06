@@ -11,8 +11,8 @@ using RestaurantApp.Models;
 namespace RestaurantApp.Migrations
 {
     [DbContext(typeof(RestaurantAppContext))]
-    [Migration("20230406172130_Initial")]
-    partial class Initial
+    [Migration("20230406175109_AddInitial")]
+    partial class AddInitial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace RestaurantApp.Migrations
 {
-    public partial class Initial : Migration
+    public partial class AddInitial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

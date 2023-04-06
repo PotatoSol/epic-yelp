@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
 using System.Threading.Tasks;
@@ -7,6 +8,7 @@ using RestaurantApp.Models;
 
 namespace RestaurantApp.Controllers
 {
+  [Authorize(Roles = "Admin")]
   public class RoleController : Controller
   {
     private RoleManager<IdentityRole> roleManager;

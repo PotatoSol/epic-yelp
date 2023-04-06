@@ -73,9 +73,15 @@
                               
                                     <a class="dropdown-item" href="@Url.Action("Index","Account")">My Profile</a>
                                 </li>
+                                @if (User.IsInRole("Admin"))
+                                {
                                 <li>
-                                    <a class="dropdown-item" href="#">Settings</a>
+                                    <a class="dropdown-item" href="@Url.Action("","Admin")">Admin</a>
                                 </li>
+                                                                <li>
+                                    <a class="dropdown-item" href="@Url.Action("","Role")">Roles</a>
+                                </li>
+                                }
                                 <li>
                                     <a class="dropdown-item" href="@Url.Action("LogOff","Account")">Logout</a>
                                 </li>

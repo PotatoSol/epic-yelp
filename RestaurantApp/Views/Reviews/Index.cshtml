@@ -16,6 +16,7 @@
       <th>Review Title</th>
       <th>Review Message</th>
       <th>Review Details</th> 
+      <th>Review Delete</th> 
     </tr>
   </thead>
 
@@ -42,7 +43,11 @@
             @Html.ActionLink("Edit", "Edit", new { id = review.ReviewId })
           </button>
         </td> 
-    
+            <td>
+          <button type="button" class="btn btn-link btn-sm btn-rounded">
+            @Html.ActionLink("Delete", "Delete", new { id = review.ReviewId })
+          </button>
+        </td> 
     </tr>
     }
   </tbody>

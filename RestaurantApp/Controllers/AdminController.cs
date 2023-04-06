@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace RestaurantApp.Controllers
 {
-  // [Authorize(Roles = "Admin, Developer")]
+  [Authorize(Roles = "Admin")]
   public class AdminController : Controller
   {
     private UserManager<ApplicationUser> userManager;

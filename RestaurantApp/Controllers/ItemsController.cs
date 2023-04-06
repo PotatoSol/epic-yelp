@@ -11,7 +11,7 @@ using System.Security.Claims;
 
 namespace RestaurantApp.Controllers
 {
-  // [Authorize]
+  [Authorize(Roles = "Admin")]
   public class ItemsController : Controller
   {
     private readonly RestaurantAppContext _db;
