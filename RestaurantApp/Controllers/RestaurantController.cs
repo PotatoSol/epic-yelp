@@ -32,13 +32,13 @@ namespace RestaurantApp.Controllers
           .FirstOrDefault(restaurant => restaurant.RestaurantId == id);
       return View(thisRestaurant);
     }
-    [Authorize(Roles = "Admin, Developer")]
+    // [Authorize(Roles = "Admin, Developer")]
     [HttpGet]
     public ActionResult Create()
     {
       return View();
     }
-    [Authorize(Roles = "Admin, Developer")]
+    // [Authorize(Roles = "Admin, Developer")]
     [HttpPost]
     public ActionResult Create(Restaurant restaurant)
     {

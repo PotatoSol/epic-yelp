@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace RestaurantApp.Controllers
 {
-  [Authorize(Roles = "Admin, Developer")]
+  // [Authorize(Roles = "Admin, Developer")]
   public class AdminController : Controller
   {
     private UserManager<ApplicationUser> userManager;
@@ -26,7 +26,7 @@ namespace RestaurantApp.Controllers
     public ViewResult Create() => View();
 
     [HttpPost]
-    public async Task<IActionResult> Create(User user)
+    public async Task<IActionResult> Create(UserTest user)
     {
       if (ModelState.IsValid)
       {

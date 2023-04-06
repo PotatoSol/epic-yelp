@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
  
 namespace RestaurantApp.Models
 {
-    public class User
+    public class UserTest
     {
         [Required]
         public string Name { get; set; }
