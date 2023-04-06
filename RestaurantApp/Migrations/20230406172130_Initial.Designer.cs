@@ -11,8 +11,8 @@ using RestaurantApp.Models;
 namespace RestaurantApp.Migrations
 {
     [DbContext(typeof(RestaurantAppContext))]
-    [Migration("20230405233742_DefaultRestaurantRating")]
-    partial class DefaultRestaurantRating
+    [Migration("20230406172130_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

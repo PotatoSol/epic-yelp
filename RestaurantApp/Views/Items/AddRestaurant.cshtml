@@ -6,7 +6,7 @@
 
 <h2>Add a restaurant</h2>
 
-<h4>Add a restaurant to this item: @Html.DisplayFor(model => model)</h4>
+<h4>Add a restaurant to this item: @Html.DisplayFor(model => model.ItemName) $@Html.DisplayFor(model => model.ItemPrice)</h4>
 
 @using (Html.BeginForm())
 {
@@ -19,3 +19,4 @@
 }
 
 <p>@Html.ActionLink("Back to list", "Index")</p>
+<p>@Html.ActionLink("Home", "Index", "Home")</p>

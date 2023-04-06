@@ -5,34 +5,63 @@
 @using RestaurantApp.Models
 @model RestaurantApp.Models.Review
 
-<h2>Review Details</h2>
+<h5>Review Details</h5>
 <hr />
-<h3>@Html.DisplayNameFor(model => model.ReviewTitle): @Html.DisplayFor(model => model.ReviewTitle)</h3>
-<h3>@Html.DisplayNameFor(model => model.ReviewText): @Html.DisplayFor(model => model.ReviewText)</h3>   
-<h3>@Html.DisplayNameFor(model => model.ReviewDate): @Html.DisplayFor(model => model.ReviewDate)</h3>   
-
 
 @if(@Model.ReviewJoin.Count == 0)
 {
-  <p>This review does not have any restaurants yet!</p>
-}
-else
-{
-  <h4>This review has the following restaurants:</h4>
-  <ul>
-    @foreach(RestaurantReview join in Model.ReviewJoin)
-    {
-      <li>Restaurant: @join.Restaurant.RestaurantName <br>   Rating: @join.Review.ReviewRating</li>
-      @using (Html.BeginForm("DeleteJoin", "Reviews"))
-      {
-        @Html.Hidden("joinId", @join.RestaurantReviewId)
-        <input type="submit" value="Delete"/>
-      }
-    }
-  </ul>
+  <p>This review not connected to any restaurants yet!</p>
 }
 
-<p>@Html.ActionLink("Add a Restaurant", "AddRestaurant", new { id = Model.ReviewId })</p>
-<p>@Html.ActionLink("Edit Review", "Edit", new { id = Model.ReviewId })</p>
+else{
+<table class="table align-middle mb-0 bg-white">
+  
+  <thead class="bg-light">
+    <tr>
+      <th>Name of Review</th>
+      <th>Restaurant</th>
+      <th>Actions</th> 
+      <th>Edit</th> 
+    </tr>
+  </thead>
+  <tbody>
+    @foreach(RestaurantReview join in Model.ReviewJoin)
+    {
+      <tr> @* beginning of the first row *@
+        <td>
+          <div class="d-flex align-items-center">
+            <div class="ms-3">
+              @join.Review.ReviewTitle
+            </div>
+          </div>
+        </td>
+
+        <td>
+          <p class="fw-normal mb-1">@join.Restaurant.RestaurantName <br>   Rating: @join.Review.ReviewRating</p>
+        </td>
+
+        <td>
+        @using (Html.BeginForm("DeleteJoin", "Reviews"))
+        {
+          @Html.Hidden("joinId", @join.RestaurantReviewId)
+          <input type="submit" class="btn btn-primary" value="Delete"/>
+       
+        }
+        </td>
+
+        <td>
+          <button type="button" class="btn btn-primary">
+            <a class="text-white" href='@Url.Action("Edit","Reviews", 
+            new { id = Model.ReviewId })'>Edit Review</a>
+          </button>     
+        </td>          
+      </tr>
+    }
+  </tbody>
+</table>
+}
+
+@* <p>@Html.ActionLink("Add a restaurant", "AddRestaurant", new { id = Model.ReviewId })</p> *@
+@* <p>@Html.ActionLink("Edit Review", "Edit", new { id = Model.ReviewId } )</p> *@
 <p>@Html.ActionLink("Delete Review", "Delete", new { id = Model.ReviewId })</p>
 <p>@Html.ActionLink("Back to list", "Index")</p>

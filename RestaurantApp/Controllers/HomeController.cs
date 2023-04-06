@@ -5,6 +5,8 @@ using System.Linq;
 using Microsoft.AspNetCore.Identity;
 using System.Threading.Tasks;
 using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
+
 
 namespace RestaurantApp.Controllers
 {
@@ -19,7 +21,7 @@ namespace RestaurantApp.Controllers
       _db = db;
     }
       [HttpGet("/")]
-      public async Task<ActionResult> Index()
+      public async Task<IActionResult> Index()
       {
         if (User.Identity.IsAuthenticated){
         Item[] Items = _db.Items.ToArray();

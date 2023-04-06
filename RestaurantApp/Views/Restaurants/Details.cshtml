@@ -1,12 +1,18 @@
 @{
   Layout = "_Layout";
 }
+
 @using RestaurantApp.Models
 @model RestaurantApp.Models.Restaurant
 
 @if (@Model.JoinEntities.Count == 0)
 {
-  <p>@Html.DisplayFor(model => model.RestaurantName) does not have any items!</p>
+  @* <p><b>Restaurant:</b> @Html.DisplayFor(model => model.RestaurantName) does not have any items!</p> *@
+  <b>Restaurant: @Html.DisplayFor(model => model.RestaurantName)</b> <p>Does not have any  items!</p>
+  <button type="button" class="btn btn-primary">
+  <a class="text-white" href="@Url.Action("Create","Items", 
+  new { id = Model.RestaurantId })">Add item</a></button>
+
 }
 else
 {
@@ -43,9 +49,10 @@ else
     </tbody>
   </table>
 }
-@if(@Model.ReviewJoin.Count == 0)
+@if (@Model.ReviewJoin.Count == 0)
 {
-    <p>Restaurant does not have any reviews!</p>
+   <br>
+   <b>Restaurant: @Html.DisplayFor(model => model.RestaurantName)</b> <p>Does not have any reviews!</p>
 }
 else
 {
@@ -55,6 +62,7 @@ else
       <th scope="col">Title</th>
       <th scope="col">Review</th>
       <th scope="col">Action</th>
+      @* <th scope="col">Edit</th> *@
 
     </tr>
   </thead>
@@ -72,9 +80,15 @@ else
 
           @Html.Hidden("joinId", @join.RestaurantReviewId)
           @Html.Hidden("restaurantId", Model.RestaurantId)
-           <input type="submit" class="btn btn-primary flex-grow-1" value="Delete"/>
-} 
+           <input type="submit" class="btn btn-danger" value="Delete review"/>} 
           </td>
+
+          @* <td>
+            <button type="button" class="btn btn-secondary">
+            <a class="text-white" href="@Url.Action("Details","Reviews", 
+            new { id = Model.RestaurantId })">Edit review</a></button>
+          </td>     *@
+        
         </tr>
       }
     </tbody>
@@ -85,8 +99,9 @@ else
 
 
 
-<button type="button" class="btn btn-primary">
-<a class="text-white" href="@Url.Action("Create","Reviews", new { id = Model.RestaurantId })">Add a review</a></button>
+<button type="button" class="btn btn-primary me-3">
+  <a class="text-white" href="@Url.Action("Create","Reviews")">Add New Review</a>
+</button>
 
 <button type="button" class="btn btn-secondary">
 <a class="text-white" href="@Url.Action("Edit","Restaurants", 

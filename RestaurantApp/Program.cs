@@ -3,7 +3,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using RestaurantApp.Models;
 using Microsoft.AspNetCore.Identity;
-
  
 namespace RestaurantApp
 {
@@ -24,7 +23,6 @@ namespace RestaurantApp
                         )
                       );
 
-      // New code below!!
       builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<RestaurantAppContext>()
                 .AddDefaultTokenProviders();
@@ -37,7 +35,6 @@ namespace RestaurantApp
 
       app.UseRouting();
 
-      // New code below!
       app.UseAuthentication(); 
       app.UseAuthorization();
 
