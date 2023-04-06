@@ -122,12 +122,12 @@ namespace RestaurantApp.Controllers
       return RedirectToAction("Index");
     }
 
-    // public ActionResult AddRestaurant(int id)
-    // {
-    //   Review thisReview = _db.Reviews.FirstOrDefault(reviews => reviews.ReviewId == id);
-    //   ViewBag.RestaurantId = new SelectList(_db.Restaurants, "RestaurantId", "RestaurantName");
-    //   return View(thisReview);
-    // }
+    public ActionResult AddRestaurant(int id)
+    {
+      Review thisReview = _db.Reviews.FirstOrDefault(reviews => reviews.ReviewId == id);
+      ViewBag.RestaurantId = new SelectList(_db.Restaurants, "RestaurantId", "RestaurantName");
+      return View(thisReview);
+    }
 
     [HttpPost]
     public ActionResult AddRestaurant(Review review, int restaurantId)
@@ -142,7 +142,7 @@ namespace RestaurantApp.Controllers
       }
       return RedirectToAction("Details", new { id = review.ReviewId });
     }
-    [HttpPost]
+   [HttpPost]
 
     [HttpPost]
     public ActionResult DeleteJoin(int joinId, int restaurantId )
