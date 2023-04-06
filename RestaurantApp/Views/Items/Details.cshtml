@@ -5,33 +5,43 @@
 @using RestaurantApp.Models
 @model RestaurantApp.Models.Item
 
+
 <h2>Item Details</h2>
 <hr />
-<h3>@Html.DisplayNameFor(model => model.ItemName): @Html.DisplayFor(model => model.ItemName)</h3> 
-<h3>@Html.DisplayNameFor(model => model.ItemPrice): @Html.DisplayFor(model => model.ItemPrice)</h3>   
+<h3>Item Name: @Html.DisplayFor(model => model.ItemName)</h3> 
+<h3>Item Price: $@Html.DisplayFor(model => model.ItemPrice)</h3>
 
 
 @if(@Model.JoinEntities.Count == 0)
 {
-  <p>This item does not have any restaurants yet!</p>
+  <p>@Html.DisplayFor(model => model.ItemName) does not have any restaurants yet!</p>
+    
 }
 else
 {
-  <h4>This item has the following restaurants:</h4>
-  <ul>
-    @foreach(RestaurantItem join in Model.JoinEntities)
+<table class="table caption-top">   
+ <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Price</th>
+      <th scope="col">Restaurant</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach (RestaurantItem item in Model.JoinEntities)
     {
-      <li>Restaurant: @join.Restaurant.RestaurantName</li>
-      @using (Html.BeginForm("DeleteJoin", "Items"))
-      {
-        @Html.Hidden("joinId", @join.RestaurantItemId)
-        <input type="submit" value="Delete"/>
-      }
+      <tr>
+        <th scope="row">@item.Item.ItemName</th>
+        <th scope="row">@item.Item.ItemPrice</th>
+        <th scope="row">@item.Restaurant.RestaurantName</th>
+      </tr>
     }
-  </ul>
+  </tbody>
+</table>
 }
 
 <p>@Html.ActionLink("Add a Restaurant", "AddRestaurant", new { id = Model.ItemId })</p>
 <p>@Html.ActionLink("Edit Item", "Edit", new { id = Model.ItemId })</p>
 <p>@Html.ActionLink("Delete Item", "Delete", new { id = Model.ItemId })</p>
 <p>@Html.ActionLink("Back to list", "Index")</p>
+<p>@Html.ActionLink("Home", "Index", "Home")</p>
