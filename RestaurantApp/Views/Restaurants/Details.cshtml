@@ -64,6 +64,7 @@ else
       <th scope="col">Title</th>
       <th scope="col">Rating</th>
       <th scope="col">Review</th>
+      <th scope="col">User</th>
       @* <th scope="col">Action</th> *@
       @* <th scope="col">Edit</th> *@
 
@@ -77,6 +78,7 @@ else
           <th scope="row">@join.Review.ReviewTitle</th>
           <td>@join.Review.ReviewRating</td>
           <td>@join.Review.ReviewText</td>
+          <td>@join.Review.User.UserName</td>
           @* <td>
           @using (Html.BeginForm("DeleteJoin", "Reviews"))
           {
