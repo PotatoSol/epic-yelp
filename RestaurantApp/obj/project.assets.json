@@ -956,19 +956,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/Chill/.nuget/packages/": {}
+    "/Users/student/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/Chill/Desktop/epic-yelp/RestaurantApp/RestaurantApp.csproj",
+      "projectUniqueName": "/Users/student/Desktop/epic-yelp/RestaurantApp/RestaurantApp.csproj",
       "projectName": "RestaurantApp",
-      "projectPath": "/Users/Chill/Desktop/epic-yelp/RestaurantApp/RestaurantApp.csproj",
-      "packagesPath": "/Users/Chill/.nuget/packages/",
-      "outputPath": "/Users/Chill/Desktop/epic-yelp/RestaurantApp/obj/",
+      "projectPath": "/Users/student/Desktop/epic-yelp/RestaurantApp/RestaurantApp.csproj",
+      "packagesPath": "/Users/student/.nuget/packages/",
+      "outputPath": "/Users/student/Desktop/epic-yelp/RestaurantApp/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/Chill/.nuget/NuGet/NuGet.Config"
+        "/Users/student/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -1030,7 +1030,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.402/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.403/RuntimeIdentifierGraph.json"
       }
     }
   }

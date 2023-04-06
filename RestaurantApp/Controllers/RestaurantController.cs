@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace RestaurantApp.Controllers
 {
-  // [Authorize]
+  
   public class RestaurantsController : Controller
   {
     private readonly RestaurantAppContext _db;
@@ -32,13 +32,13 @@ namespace RestaurantApp.Controllers
           .FirstOrDefault(restaurant => restaurant.RestaurantId == id);
       return View(thisRestaurant);
     }
-
+    [Authorize(Roles = "Admin, Developer")]
     [HttpGet]
     public ActionResult Create()
     {
       return View();
     }
-
+    [Authorize(Roles = "Admin, Developer")]
     [HttpPost]
     public ActionResult Create(Restaurant restaurant)
     {

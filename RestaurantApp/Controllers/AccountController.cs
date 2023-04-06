@@ -179,6 +179,14 @@ namespace RestaurantApp.Controllers
       passwordHasher = passwordHash;
       _db = db;
     }
+        public IActionResult Index()
+    {
+      return View(userManager.Users);
+    }
+     public IActionResult Register()
+    {
+      return View();
+    }
     [HttpPost]
     public async Task<ActionResult> Register(RegisterViewModel model)
     {
@@ -209,10 +217,10 @@ namespace RestaurantApp.Controllers
         }
       }
     }
-    public ActionResult Login()
-    {
-      return View();
-    }
+    // public ActionResult Login()
+    // {
+    //   return View();
+    // }
 
     [AllowAnonymous]
     public IActionResult Login(string returnUrl)
