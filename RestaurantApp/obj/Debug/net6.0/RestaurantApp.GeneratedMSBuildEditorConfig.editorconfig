@@ -8,113 +8,113 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = RestaurantApp
 build_property.RootNamespace = RestaurantApp
-build_property.ProjectDir = C:\Users\solmi\desktop\epic-yelp\RestaurantApp\
+build_property.ProjectDir = c:\Users\solmi\Desktop\epic-yelp\RestaurantApp\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\solmi\desktop\epic-yelp\RestaurantApp
+build_property.MSBuildProjectDirectory = c:\Users\solmi\Desktop\epic-yelp\RestaurantApp
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/solmi/desktop/epic-yelp/RestaurantApp/Views/Account/Index.cshtml]
+[c:/Users/solmi/Desktop/epic-yelp/RestaurantApp/Views/Account/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/solmi/desktop/epic-yelp/RestaurantApp/Views/Account/Login.cshtml]
+[c:/Users/solmi/Desktop/epic-yelp/RestaurantApp/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/solmi/desktop/epic-yelp/RestaurantApp/Views/Account/Register.cshtml]
+[c:/Users/solmi/Desktop/epic-yelp/RestaurantApp/Views/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/solmi/desktop/epic-yelp/RestaurantApp/Views/Home/Index.cshtml]
+[c:/Users/solmi/Desktop/epic-yelp/RestaurantApp/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/solmi/desktop/epic-yelp/RestaurantApp/Views/Home/Privacy.cshtml]
+[c:/Users/solmi/Desktop/epic-yelp/RestaurantApp/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/solmi/desktop/epic-yelp/RestaurantApp/Views/Items/AddRestaurant.cshtml]
+[c:/Users/solmi/Desktop/epic-yelp/RestaurantApp/Views/Items/AddRestaurant.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbXNcQWRkUmVzdGF1cmFudC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/solmi/desktop/epic-yelp/RestaurantApp/Views/Items/Create.cshtml]
+[c:/Users/solmi/Desktop/epic-yelp/RestaurantApp/Views/Items/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/solmi/desktop/epic-yelp/RestaurantApp/Views/Items/Delete.cshtml]
+[c:/Users/solmi/Desktop/epic-yelp/RestaurantApp/Views/Items/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbXNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/solmi/desktop/epic-yelp/RestaurantApp/Views/Items/Details.cshtml]
+[c:/Users/solmi/Desktop/epic-yelp/RestaurantApp/Views/Items/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbXNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/solmi/desktop/epic-yelp/RestaurantApp/Views/Items/Edit.cshtml]
+[c:/Users/solmi/Desktop/epic-yelp/RestaurantApp/Views/Items/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbXNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/solmi/desktop/epic-yelp/RestaurantApp/Views/Items/Index.cshtml]
+[c:/Users/solmi/Desktop/epic-yelp/RestaurantApp/Views/Items/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/solmi/desktop/epic-yelp/RestaurantApp/Views/Restaurants/AddItem.cshtml]
+[c:/Users/solmi/Desktop/epic-yelp/RestaurantApp/Views/Restaurants/AddItem.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzdGF1cmFudHNcQWRkSXRlbS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/solmi/desktop/epic-yelp/RestaurantApp/Views/Restaurants/AddReview.cshtml]
+[c:/Users/solmi/Desktop/epic-yelp/RestaurantApp/Views/Restaurants/AddReview.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzdGF1cmFudHNcQWRkUmV2aWV3LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/solmi/desktop/epic-yelp/RestaurantApp/Views/Restaurants/Create.cshtml]
+[c:/Users/solmi/Desktop/epic-yelp/RestaurantApp/Views/Restaurants/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzdGF1cmFudHNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/solmi/desktop/epic-yelp/RestaurantApp/Views/Restaurants/Delete.cshtml]
+[c:/Users/solmi/Desktop/epic-yelp/RestaurantApp/Views/Restaurants/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzdGF1cmFudHNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/solmi/desktop/epic-yelp/RestaurantApp/Views/Restaurants/Details.cshtml]
+[c:/Users/solmi/Desktop/epic-yelp/RestaurantApp/Views/Restaurants/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzdGF1cmFudHNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/solmi/desktop/epic-yelp/RestaurantApp/Views/Restaurants/Edit.cshtml]
+[c:/Users/solmi/Desktop/epic-yelp/RestaurantApp/Views/Restaurants/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzdGF1cmFudHNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/solmi/desktop/epic-yelp/RestaurantApp/Views/Restaurants/Index.cshtml]
+[c:/Users/solmi/Desktop/epic-yelp/RestaurantApp/Views/Restaurants/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzdGF1cmFudHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/solmi/desktop/epic-yelp/RestaurantApp/Views/Reviews/Create.cshtml]
+[c:/Users/solmi/Desktop/epic-yelp/RestaurantApp/Views/Reviews/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV2aWV3c1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/solmi/desktop/epic-yelp/RestaurantApp/Views/Reviews/Delete.cshtml]
+[c:/Users/solmi/Desktop/epic-yelp/RestaurantApp/Views/Reviews/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV2aWV3c1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/solmi/desktop/epic-yelp/RestaurantApp/Views/Reviews/Details.cshtml]
+[c:/Users/solmi/Desktop/epic-yelp/RestaurantApp/Views/Reviews/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV2aWV3c1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/solmi/desktop/epic-yelp/RestaurantApp/Views/Shared/Error.cshtml]
+[c:/Users/solmi/Desktop/epic-yelp/RestaurantApp/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/solmi/desktop/epic-yelp/RestaurantApp/Views/Shared/_ValidationScriptsPartial.cshtml]
+[c:/Users/solmi/Desktop/epic-yelp/RestaurantApp/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/solmi/desktop/epic-yelp/RestaurantApp/Views/_ViewImports.cshtml]
+[c:/Users/solmi/Desktop/epic-yelp/RestaurantApp/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/solmi/desktop/epic-yelp/RestaurantApp/Views/_ViewStart.cshtml]
+[c:/Users/solmi/Desktop/epic-yelp/RestaurantApp/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/solmi/desktop/epic-yelp/RestaurantApp/Views/Shared/_Layout.cshtml]
+[c:/Users/solmi/Desktop/epic-yelp/RestaurantApp/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-kas9lmrrr3
